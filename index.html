@@ -268,16 +268,27 @@
       flex-direction: column;
       gap: 14px;
     }
-    .heroCardPhoto{
+
+    .portraitRow{
+      display:flex;
+      gap: 12px;
+      align-items:center;
+    }
+    .portrait{
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.16);
+      overflow:hidden;
+      background: rgba(0,0,0,0.22);
+      flex: 0 0 auto;
+    }
+    .portrait img{
       width: 100%;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,0.14);
-      display:block;
-      aspect-ratio: 16 / 10;
+      height: 100%;
       object-fit: cover;
       object-position: center;
     }
-
     .miniTitle{ font-size: 12px; color: var(--muted2); letter-spacing: .08em; text-transform: uppercase; }
     .stat{
       display:flex; justify-content: space-between; gap: 12px;
@@ -289,6 +300,7 @@
     .stat b{ font-size: 13.5px; }
     .stat span{ color: var(--muted); font-size: 12.5px; }
 
+    /* Sections */
     .section{
       margin-top: 26px;
       padding: 22px;
@@ -297,7 +309,6 @@
       border: 1px solid rgba(255,255,255,0.12);
       box-shadow: 0 14px 40px rgba(0,0,0,0.22);
     }
-
     .section h2{
       margin: 0 0 12px;
       font-size: 18px;
@@ -365,7 +376,6 @@
       font-size: 12.5px;
     }
 
-    /* photo strip + gallery */
     .photoStrip{
       display:grid;
       grid-template-columns: repeat(3, 1fr);
@@ -449,9 +459,9 @@
 
     <!-- HERO -->
     <section class="hero" aria-label="Hero">
-      <!-- Hero background photo (exists) -->
+      <!-- Hero background photo -->
       <div class="heroMedia" aria-hidden="true">
-        <img src="assets/img/UBusinessMarketingGroup1-31.jpg" alt="" loading="eager" />
+        <img src="assets/img/photo9.jpg" alt="" loading="eager" />
       </div>
 
       <div class="heroGrid">
@@ -478,15 +488,17 @@
 
         <aside class="heroCard" aria-label="Highlights">
           <div class="heroCardInner">
-            <!-- Hero card photo (exists) -->
-            <img
-              class="heroCardPhoto"
-              src="assets/img/UBusinessMarketingGroup1-281.jpg"
-              alt="Pratham Shah collaborating in class"
-              loading="lazy"
-            />
-
-            <div class="miniTitle">Highlights</div>
+            <div class="portraitRow">
+              <div class="portrait">
+                <img src="assets/img/photo4.jpg" alt="Pratham in a classroom setting" loading="lazy" />
+              </div>
+              <div>
+                <div class="miniTitle">Highlights</div>
+                <div style="color: var(--muted); font-size: 12.5px; margin-top: 2px;">
+                  Teaching • Systems • Analytics
+                </div>
+              </div>
+            </div>
 
             <div class="stat">
               <b>Teaching Assistant</b>
@@ -518,11 +530,37 @@
         Seeking entry-level Business Analyst, Systems Analyst, or IT roles.
       </p>
 
-      <!-- About photo strip (ONLY the 3 existing images) -->
+      <!-- About photo strip -->
       <div class="photoStrip" aria-label="About photos">
-        <div class="photo"><img src="assets/img/UBusinessMarketingGroup1-281.jpg" alt="Collaborating with classmates" loading="lazy"></div>
-        <div class="photo"><img src="assets/img/UBusinessMarketingGroup1-31.jpg" alt="Mentorship in classroom" loading="lazy"></div>
-        <div class="photo"><img src="assets/img/UBusinessMarketingGroup1-9.jpg" alt="Classroom discussion" loading="lazy"></div>
+        <div class="photo"><img src="assets/img/photo9.jpg" alt="Classroom session" loading="lazy"></div>
+        <div class="photo"><img src="assets/img/photo10.jpg" alt="Collaboration in class" loading="lazy"></div>
+        <div class="photo"><img src="assets/img/photo1.jpg" alt="Lecture environment" loading="lazy"></div>
+      </div>
+    </section>
+
+    <!-- OPTIONAL: TWO FEATURE PHOTOS -->
+    <section class="section" id="photos">
+      <h2>Classroom & Collaboration</h2>
+      <p>Selected moments from coursework, collaboration, and instruction.</p>
+
+      <div class="grid2" style="margin-top:14px;">
+        <div class="card">
+          <img
+            src="assets/img/photo9.jpg"
+            alt="Classroom collaboration"
+            style="width:100%; border-radius:12px;"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="card">
+          <img
+            src="assets/img/photo10.jpg"
+            alt="Academic discussion"
+            style="width:100%; border-radius:12px;"
+            loading="lazy"
+          />
+        </div>
       </div>
     </section>
 
@@ -723,12 +761,19 @@
     <!-- PHOTOS -->
     <section class="section" id="gallery">
       <h2>Photos</h2>
-      <p>Selected classroom and collaboration photos (using the 3 images currently in your repo).</p>
+      <p>Selected classroom and collaboration photos (optimized for a professional portfolio presentation).</p>
 
       <div class="gallery" aria-label="Photo gallery">
-        <div class="gItem gWide"><img src="assets/img/UBusinessMarketingGroup1-31.jpg" alt="Classroom session wide shot" loading="lazy"></div>
-        <div class="gItem gTall"><img src="assets/img/UBusinessMarketingGroup1-281.jpg" alt="Collaboration in class" loading="lazy"></div>
-        <div class="gItem gMid"><img src="assets/img/UBusinessMarketingGroup1-9.jpg" alt="Classroom discussion" loading="lazy"></div>
+        <div class="gItem gWide"><img src="assets/img/photo9.jpg" alt="Classroom session wide shot" loading="lazy"></div>
+        <div class="gItem gMid"><img src="assets/img/photo10.jpg" alt="Collaboration in class" loading="lazy"></div>
+        <div class="gItem gTall"><img src="assets/img/photo4.jpg" alt="Professional portrait" loading="lazy"></div>
+
+        <div class="gItem gMid"><img src="assets/img/photo1.jpg" alt="Lecture environment" loading="lazy"></div>
+        <div class="gItem gTall"><img src="assets/img/photo3.jpg" alt="Portrait alternate" loading="lazy"></div>
+        <div class="gItem gWide"><img src="assets/img/photo2.jpg" alt="Classroom discussion wide" loading="lazy"></div>
+
+        <div class="gItem gMid"><img src="assets/img/photo8.jpg" alt="Collaboration with laptop" loading="lazy"></div>
+        <div class="gItem gTall"><img src="assets/img/photo11.jpg" alt="Additional classroom moment" loading="lazy"></div>
       </div>
     </section>
 
@@ -737,6 +782,8 @@
       <h2>Contact</h2>
       <p style="margin-top:8px;color:var(--muted)">
         Email: <a class="chip" href="mailto:prathamshah0103@gmail.com" id="emailChip">prathamshah0103@gmail.com</a>
+        <span style="opacity:.6">•</span>
+        LinkedIn: <a class="chip" href="#" id="linkedinLink" target="_blank" rel="noopener" style="display:none;">Open Profile</a>
         <span style="opacity:.6">•</span>
         GitHub: <a class="chip" href="https://github.com/Pratham-shah499" target="_blank" rel="noopener">Open GitHub</a>
       </p>
@@ -758,6 +805,16 @@
     fetch("resume.pdf", { method: "HEAD" })
       .then(r => { if (!r.ok) console.warn("resume.pdf not found in repo root. Upload it as 'resume.pdf'."); })
       .catch(() => console.warn("Could not check resume.pdf. Upload it as 'resume.pdf'."));
+
+    // Optional: set LinkedIn if you want it visible.
+    // Put your real URL between the quotes and it will show automatically.
+    const LINKEDIN = ""; // e.g. "https://www.linkedin.com/in/your-handle/"
+
+    const linkedinLink = document.getElementById("linkedinLink");
+    if (LINKEDIN && linkedinLink) {
+      linkedinLink.href = LINKEDIN;
+      linkedinLink.style.display = "inline-flex";
+    }
   </script>
 </body>
 </html>
