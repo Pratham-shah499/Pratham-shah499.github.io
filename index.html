@@ -1,11 +1,682 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Pratham Shah</title>
-  </head>
-  <body>
-    <h1>Pratham Shah</h1>
-    <p>Information Systems Graduate</p>
-    <p>This site is live.</p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pratham Shah | Information Systems</title>
+  <meta name="description" content="Pratham Shah — Information Systems graduate specializing in data, systems, and analytics. Projects in PHP/MySQL, SQL databases, and enterprise network/cloud architecture." />
+
+  <!-- Open Graph for nicer link previews -->
+  <meta property="og:title" content="Pratham Shah | Information Systems" />
+  <meta property="og:description" content="Portfolio: projects, skills, and resume." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://pratham-shah499.github.io/" />
+
+  <style>
+    :root{
+      --bg: #0b1020;
+      --panel: rgba(255,255,255,0.08);
+      --panel2: rgba(255,255,255,0.06);
+      --border: rgba(255,255,255,0.14);
+      --text: rgba(255,255,255,0.92);
+      --muted: rgba(255,255,255,0.70);
+      --muted2: rgba(255,255,255,0.58);
+      --shadow: 0 18px 60px rgba(0,0,0,0.45);
+      --radius: 18px;
+      --max: 1100px;
+
+      --acc1: #7c5cff; /* violet */
+      --acc2: #34d399; /* green */
+      --acc3: #22d3ee; /* cyan */
+      --acc4: #f59e0b; /* amber */
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color: var(--text);
+      background: radial-gradient(1200px 900px at 15% 15%, rgba(124,92,255,0.35), transparent 55%),
+                  radial-gradient(900px 800px at 85% 25%, rgba(34,211,238,0.25), transparent 55%),
+                  radial-gradient(1100px 900px at 45% 90%, rgba(52,211,153,0.18), transparent 60%),
+                  linear-gradient(180deg, #060914, #0b1020 45%, #070a14);
+      overflow-x: hidden;
+    }
+
+    /* subtle animated grain */
+    body::before{
+      content:"";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.08;
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
+      mix-blend-mode: overlay;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    a:focus { outline: 2px solid rgba(34,211,238,0.9); outline-offset: 3px; border-radius: 10px; }
+
+    .wrap{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 26px 18px 90px;
+    }
+
+    /* top nav */
+    .nav{
+      position: sticky;
+      top: 14px;
+      z-index: 20;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding: 12px 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(10,14,30,0.55);
+      backdrop-filter: blur(14px);
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+
+    .brand{
+      display:flex; gap:10px; align-items:center;
+      min-width: 160px;
+    }
+    .logo{
+      width: 38px; height: 38px; border-radius: 12px;
+      background: radial-gradient(circle at 30% 30%, rgba(124,92,255,0.95), rgba(34,211,238,0.55) 55%, rgba(52,211,153,0.35) 100%);
+      box-shadow: 0 12px 30px rgba(124,92,255,0.22);
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+    .brand b{ font-size: 14px; letter-spacing: 0.3px; }
+    .brand span{ display:block; font-size: 12px; color: var(--muted2); margin-top: 1px; }
+
+    .navlinks{
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .chip{
+      padding: 9px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.06);
+      color: var(--muted);
+      font-size: 12.5px;
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+      user-select: none;
+      white-space: nowrap;
+    }
+    .chip:hover{
+      transform: translateY(-1px);
+      border-color: rgba(34,211,238,0.35);
+      background: rgba(34,211,238,0.08);
+      color: var(--text);
+    }
+
+    /* hero */
+    .hero{
+      margin-top: 18px;
+      padding: 40px 22px;
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, rgba(255,255,255,0.10), rgba(255,255,255,0.05));
+      border: 1px solid rgba(255,255,255,0.14);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after{
+      content:"";
+      position:absolute;
+      right:-140px; top:-180px;
+      width: 420px; height: 420px;
+      background: radial-gradient(circle at 30% 30%, rgba(245,158,11,0.35), transparent 60%),
+                  radial-gradient(circle at 55% 55%, rgba(124,92,255,0.35), transparent 62%),
+                  radial-gradient(circle at 70% 30%, rgba(34,211,238,0.26), transparent 60%);
+      filter: blur(14px);
+      opacity: .9;
+      transform: rotate(12deg);
+    }
+
+    .heroGrid{
+      display:grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 22px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .kicker{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: var(--muted);
+      font-size: 12.5px;
+    }
+    .dot{
+      width: 8px; height: 8px; border-radius: 50%;
+      background: rgba(52,211,153,0.95);
+      box-shadow: 0 0 0 6px rgba(52,211,153,0.10);
+    }
+
+    h1{
+      margin: 14px 0 8px;
+      font-size: clamp(34px, 4vw, 56px);
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+    }
+    .subtitle{
+      color: var(--muted);
+      font-size: clamp(15px, 1.5vw, 18px);
+      line-height: 1.5;
+      max-width: 56ch;
+    }
+
+    .ctaRow{
+      display:flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+    .btn{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      padding: 11px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.08);
+      color: var(--text);
+      font-weight: 600;
+      font-size: 13.5px;
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+      cursor: pointer;
+      user-select: none;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      border-color: rgba(124,92,255,0.35);
+      background: rgba(124,92,255,0.12);
+    }
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(124,92,255,0.95), rgba(34,211,238,0.55));
+      border-color: rgba(255,255,255,0.18);
+      box-shadow: 0 14px 40px rgba(124,92,255,0.22);
+    }
+    .btn.primary:hover{
+      background: linear-gradient(135deg, rgba(124,92,255,0.98), rgba(34,211,238,0.62));
+      border-color: rgba(255,255,255,0.25);
+    }
+
+    .icon{
+      width: 16px; height: 16px; display:inline-block;
+    }
+
+    .heroCard{
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.06);
+      padding: 18px;
+      box-shadow: 0 14px 40px rgba(0,0,0,0.25);
+      position: relative;
+      overflow: hidden;
+    }
+    .heroCard::before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background: radial-gradient(circle at 20% 20%, rgba(34,211,238,0.18), transparent 55%),
+                  radial-gradient(circle at 80% 30%, rgba(124,92,255,0.18), transparent 55%),
+                  radial-gradient(circle at 50% 80%, rgba(52,211,153,0.10), transparent 60%);
+      filter: blur(10px);
+      opacity: 1;
+      z-index: 0;
+    }
+    .heroCardInner{
+      position: relative;
+      z-index: 1;
+      display:flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .miniTitle{ font-size: 12px; color: var(--muted2); letter-spacing: .08em; text-transform: uppercase; }
+    .stat{
+      display:flex; justify-content: space-between; gap: 12px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(0,0,0,0.18);
+    }
+    .stat b{ font-size: 13.5px; }
+    .stat span{ color: var(--muted); font-size: 12.5px; }
+
+    /* sections */
+    .section{
+      margin-top: 26px;
+      padding: 22px;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 14px 40px rgba(0,0,0,0.22);
+    }
+
+    .section h2{
+      margin: 0 0 12px;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+    }
+    .section p{ margin: 8px 0 0; color: var(--muted); }
+
+    .grid2{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 14px;
+    }
+
+    .card{
+      border-radius: 16px;
+      padding: 16px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.05);
+      transition: transform .15s ease, border-color .15s ease, background .15s ease;
+    }
+    .card:hover{
+      transform: translateY(-2px);
+      border-color: rgba(34,211,238,0.35);
+      background: rgba(34,211,238,0.06);
+    }
+    .card h3{
+      margin: 0 0 8px;
+      font-size: 15px;
+      letter-spacing: -0.01em;
+    }
+    .meta{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .tag{
+      font-size: 12px;
+      color: rgba(255,255,255,0.75);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+      padding: 6px 10px;
+      border-radius: 999px;
+    }
+
+    .split{
+      display:grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 16px;
+      margin-top: 12px;
+    }
+
+    .list{
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+    .list li{ margin: 10px 0; }
+
+    .footer{
+      margin-top: 18px;
+      text-align: center;
+      color: var(--muted2);
+      font-size: 12.5px;
+    }
+
+    /* responsive */
+    @media (max-width: 880px){
+      .heroGrid{ grid-template-columns: 1fr; }
+      .split{ grid-template-columns: 1fr; }
+      .grid2{ grid-template-columns: 1fr; }
+      .nav{ gap: 10px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <div class="nav" role="navigation" aria-label="Primary">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <b>Pratham Shah</b>
+          <span>Information Systems • Data • Systems</span>
+        </div>
+      </div>
+
+      <div class="navlinks">
+        <a class="chip" href="#about">About</a>
+        <a class="chip" href="#projects">Projects</a>
+        <a class="chip" href="#experience">Experience</a>
+        <a class="chip" href="#skills">Skills</a>
+        <a class="chip" href="#contact">Contact</a>
+      </div>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero" aria-label="Hero">
+      <div class="heroGrid">
+        <div>
+          <div class="kicker"><span class="dot"></span> Open to entry-level roles • Salt Lake City, UT</div>
+          <h1>Pratham Shah</h1>
+          <p class="subtitle">
+            Information Systems graduate focused on <b>data analytics</b>, <b>databases</b>, and <b>enterprise systems</b>.
+            Teaching Assistant supporting 300+ students across analytics, spreadsheets, SQL, and systems coursework.
+          </p>
+
+          <div class="ctaRow">
+            <a class="btn primary" href="resume.pdf" target="_blank" rel="noopener">
+              <span class="icon" aria-hidden="true">📄</span> Download Resume
+            </a>
+            <a class="btn" href="#projects">
+              <span class="icon" aria-hidden="true">🧩</span> View Projects
+            </a>
+            <a class="btn" href="mailto:YOUR_EMAIL" id="emailLink">
+              <span class="icon" aria-hidden="true">✉️</span> Email Me
+            </a>
+          </div>
+        </div>
+
+        <aside class="heroCard" aria-label="Highlights">
+          <div class="heroCardInner">
+            <div class="miniTitle">Highlights</div>
+
+            <div class="stat">
+              <b>Teaching Assistant</b>
+              <span>Aug 2025 – Present</span>
+            </div>
+            <div class="stat">
+              <b>Projects: PHP/MySQL • SQL</b>
+              <span>RBAC • CRUD • Reporting</span>
+            </div>
+            <div class="stat">
+              <b>Network + Cloud Design</b>
+              <span>VLANs • Azure Hybrid AD</span>
+            </div>
+            <div class="stat">
+              <b>Recognition</b>
+              <span>Adobe Social Impact Challenge Runner-Up</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <h2>About</h2>
+      <p>
+        Information Systems graduate with hands-on experience in data analytics, databases, and enterprise systems.
+        Served as a Teaching Assistant supporting 300+ students across analytics, spreadsheets, SQL, and systems coursework.
+        Seeking entry-level Business Analyst, Systems Analyst, or IT roles.
+      </p>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+      <h2>Projects</h2>
+
+      <div class="grid2">
+        <article class="card">
+          <h3>Secure Stadium Ticketing System</h3>
+          <p>
+            Full-stack web application with authentication, role-based access control (RBAC), CRUD operations,
+            and SQL reporting.
+          </p>
+          <div class="meta">
+            <span class="tag">PHP</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">RBAC</span>
+            <span class="tag">CRUD</span>
+            <span class="tag">SQL Reporting</span>
+          </div>
+          <p style="margin-top:12px;color:rgba(255,255,255,0.70);">
+            <b>Outcome:</b> Implemented secure ticket purchasing and admin reporting workflows.
+          </p>
+          <!-- Optional repo/demo links (replace #) -->
+          <p style="margin-top:12px;">
+            <a class="chip" href="#" target="_blank" rel="noopener">Repo</a>
+            <a class="chip" href="#" target="_blank" rel="noopener">Demo</a>
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Enterprise Trading & Portfolio Database</h3>
+          <p>
+            Designed a 23-table normalized schema to support trading, accounts, advisors, and compliance with analytical queries.
+          </p>
+          <div class="meta">
+            <span class="tag">SQL</span>
+            <span class="tag">Normalization</span>
+            <span class="tag">ERD</span>
+            <span class="tag">Analytical Queries</span>
+          </div>
+          <p style="margin-top:12px;color:rgba(255,255,255,0.70);">
+            <b>Outcome:</b> Built reporting queries that answer business and compliance questions.
+          </p>
+          <p style="margin-top:12px;">
+            <a class="chip" href="#" target="_blank" rel="noopener">Schema</a>
+            <a class="chip" href="#" target="_blank" rel="noopener">Queries</a>
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Enterprise Network & Cloud Architecture</h3>
+          <p>
+            Designed Layer 1 & Layer 3 enterprise network with VLAN segmentation and Azure hybrid AD integration.
+          </p>
+          <div class="meta">
+            <span class="tag">Layer 3 IP Plan</span>
+            <span class="tag">VLANs</span>
+            <span class="tag">Azure Hybrid AD</span>
+            <span class="tag">Security</span>
+          </div>
+          <p style="margin-top:12px;color:rgba(255,255,255,0.70);">
+            <b>Outcome:</b> Documented secure enterprise networking and identity workflows.
+          </p>
+          <p style="margin-top:12px;">
+            <a class="chip" href="#" target="_blank" rel="noopener">Diagram</a>
+            <a class="chip" href="#" target="_blank" rel="noopener">Write-up</a>
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Teaching Support: Analytics & Systems</h3>
+          <p>
+            Supported 300+ students weekly with dashboards, PivotTables, advanced Excel functions, SQL troubleshooting,
+            and systems design issues.
+          </p>
+          <div class="meta">
+            <span class="tag">Excel Analytics</span>
+            <span class="tag">Dashboards</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Systems</span>
+          </div>
+          <p style="margin-top:12px;color:rgba(255,255,255,0.70);">
+            <b>Outcome:</b> Improved grading accuracy and reduced rework by correcting complex spreadsheet logic.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section" id="experience">
+      <h2>Experience</h2>
+
+      <div class="split">
+        <div class="card">
+          <h3>Teaching Assistant — Data & Spreadsheet Analytics</h3>
+          <p style="color:var(--muted)">University of Utah • Aug 2025 – Present</p>
+          <ul class="list">
+            <li>Supported analytics models for 100+ students weekly (dashboards, PivotTables, VLOOKUP/XLOOKUP).</li>
+            <li>Diagnosed complex spreadsheet logic to improve grading accuracy and reduce rework.</li>
+            <li>Operated Canvas grading workflows and academic communications under deadlines.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Teaching Assistant — Intro to IS & Spreadsheet Analysis</h3>
+          <p style="color:var(--muted)">University of Utah • Aug 2025 – Present</p>
+          <ul class="list">
+            <li>Supported instruction across databases, networking, cybersecurity, and enterprise systems.</li>
+            <li>Evaluated labs and technical projects for 200+ students, enforcing quality standards.</li>
+            <li>Provided one-on-one troubleshooting for SQL queries, logic errors, and system design issues.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Business & Technology Operations Intern</h3>
+          <p style="color:var(--muted)">ACE Ed Venture • Malaysia • 2023 – 2024</p>
+          <ul class="list">
+            <li>Supported tech-enabled education initiatives through documentation, process analysis, and reporting.</li>
+            <li>Assisted business development by organizing operational data and internal workflows.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Operations & Analytics Intern</h3>
+          <p style="color:var(--muted)">Shali Bhadra Pharmacy • Mumbai • 2019 – 2020</p>
+          <ul class="list">
+            <li>Conducted internal audits improving financial transparency and inventory visibility.</li>
+            <li>Built basic inventory tools and analyzed turnover data to support cost-saving decisions.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Founder & President</h3>
+          <p style="color:var(--muted)">University of Utah Esports Club • 2024 – Present</p>
+          <ul class="list">
+            <li>Founded and scaled a student organization focused on competitive gaming and community engagement.</li>
+            <li>Led branding, recruitment, event coordination, and stakeholder communication.</li>
+            <li>Structured workflows to increase participation and retention.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Certifications & Recognition</h3>
+          <ul class="list">
+            <li>IBM Data Science Fundamentals</li>
+            <li>TensorFlow Developer Pathway (Course Completion)</li>
+            <li>Adobe Social Impact Challenge Runner-Up</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+      <h2>Technical Skills</h2>
+
+      <div class="grid2">
+        <div class="card">
+          <h3>Languages</h3>
+          <p style="color:var(--muted)">Python, SQL, PHP, JavaScript, Java, C++, HTML, CSS</p>
+          <div class="meta">
+            <span class="tag">Backend</span>
+            <span class="tag">Web</span>
+            <span class="tag">Scripting</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Tools</h3>
+          <p style="color:var(--muted)">MySQL, Git, Tableau, Excel (Analytics), VS Code, phpMyAdmin</p>
+          <div class="meta">
+            <span class="tag">Databases</span>
+            <span class="tag">BI</span>
+            <span class="tag">Dev Tools</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Concepts</h3>
+          <p style="color:var(--muted)">Data Modeling, ETL, RBAC, OOP, MVC Architecture, Networking, Azure Cloud</p>
+          <div class="meta">
+            <span class="tag">Systems</span>
+            <span class="tag">Security</span>
+            <span class="tag">Cloud</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Resume</h3>
+          <p style="color:var(--muted)">Download a clean PDF version for applications and recruiters.</p>
+          <p style="margin-top: 12px;">
+            <a class="btn primary" href="resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <h2>Contact</h2>
+      <p style="margin-top:8px;color:var(--muted)">
+        Email: <a class="chip" href="mailto:YOUR_EMAIL" id="emailChip">YOUR_EMAIL</a>
+        <span style="opacity:.6">•</span>
+        LinkedIn: <a class="chip" href="YOUR_LINKEDIN_URL" target="_blank" rel="noopener">Open Profile</a>
+        <span style="opacity:.6">•</span>
+        GitHub: <a class="chip" href="https://github.com/Pratham-shah499" target="_blank" rel="noopener">Open GitHub</a>
+      </p>
+
+      <p style="margin-top:14px;color:var(--muted2)">
+        Location: Salt Lake City, UT • Phone: <span class="chip" id="phone">385-228-0538</span>
+      </p>
+    </section>
+
+    <div class="footer">
+      <div>© <span id="year"></span> Pratham Shah • Built with GitHub Pages</div>
+    </div>
+
+  </div>
+
+  <script>
+    // Set year automatically
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Safety check: if resume.pdf is missing, warn in console (doesn't break the site)
+    fetch("resume.pdf", { method: "HEAD" })
+      .then(r => {
+        if (!r.ok) console.warn("resume.pdf not found in repo root. Upload it as 'resume.pdf' to enable the download button.");
+      })
+      .catch(() => console.warn("Could not check resume.pdf (offline/block). Upload it as 'resume.pdf' to enable the download button."));
+
+    // Replace placeholders if you forget (this prevents broken mailto display)
+    const EMAIL = "prathamshah0103@gmail.com"; // <-- you can change it here
+    const LINKEDIN = "YOUR_LINKEDIN_URL";      // <-- replace with your real LinkedIn URL
+
+    // Update email links
+    const emailLink = document.getElementById("emailLink");
+    const emailChip = document.getElementById("emailChip");
+    if (emailLink) emailLink.href = "mailto:" + EMAIL;
+    if (emailChip) {
+      emailChip.href = "mailto:" + EMAIL;
+      emailChip.textContent = EMAIL;
+    }
+
+    // Update LinkedIn link if provided
+    const linkedinAnchors = document.querySelectorAll('a[href="YOUR_LINKEDIN_URL"]');
+    if (LINKEDIN && LINKEDIN !== "YOUR_LINKEDIN_URL") {
+      linkedinAnchors.forEach(a => a.href = LINKEDIN);
+    } else {
+      // If not set, hide LinkedIn chips to avoid dead links
+      linkedinAnchors.forEach(a => a.style.display = "none");
+    }
+  </script>
+</body>
 </html>
