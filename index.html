@@ -12,6 +12,108 @@
   <meta property="og:url" content="https://pratham-shah499.github.io/" />
 
   <style>
+
+    /* ===== Modal (Popup) ===== */
+.modalOverlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.70);
+  backdrop-filter: blur(8px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 18px;
+}
+
+.modalOverlay.open{ display:flex; }
+
+.modal{
+  width: min(980px, 100%);
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(10,14,30,0.78);
+  box-shadow: 0 24px 90px rgba(0,0,0,0.60);
+  overflow: hidden;
+  position: relative;
+}
+
+.modalBg{
+  position:absolute;
+  inset:0;
+  background-size: cover;
+  background-position: center;
+  filter: saturate(1.05) contrast(1.05);
+  opacity: 0.20;
+  transform: scale(1.03);
+}
+
+.modalBg::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(900px 650px at 20% 20%, rgba(255,255,255,0.08), transparent 60%),
+    linear-gradient(180deg, rgba(6,9,20,0.35), rgba(6,9,20,0.85));
+}
+
+.modalInner{
+  position: relative;
+  z-index: 1;
+  padding: 18px;
+}
+
+.modalTop{
+  display:flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.modalTitle{
+  margin: 0;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+}
+
+.modalSub{
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.modalBody{
+  color: var(--text);
+  line-height: 1.6;
+  margin-top: 12px;
+}
+
+.modalClose{
+  border: 1px solid rgba(255,255,255,0.16);
+  background: rgba(255,255,255,0.08);
+  color: var(--text);
+  border-radius: 12px;
+  padding: 10px 12px;
+  cursor: pointer;
+  font-weight: 700;
+}
+.modalClose:hover{
+  background: rgba(255,255,255,0.12);
+}
+
+.modalLinks{
+  display:flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.clickCard{
+  cursor: pointer;
+}
+
     .sectionHead{
   display:flex;
   align-items:flex-end;
@@ -816,43 +918,49 @@ I am currently seeking entry-level opportunities in Business Analytics, Systems 
 
 
     <!-- CONTACT -->
-    <section class="section" id="contact">
-      <h2>Contact</h2>
-      <p style="margin-top:8px;color:var(--muted)">
-        Email: <a class="chip" href="mailto:prathamshah0103@gmail.com" id="emailChip">prathamshah0103@gmail.com</a>
-        <span style="opacity:.6">•</span>
-        LinkedIn: <a class="chip" href="#" id="linkedinLink" target="_blank" rel="noopener" style="display:none;">Open Profile</a>
-        <span style="opacity:.6">•</span>
-        GitHub: <a class="chip" href="https://github.com/Pratham-shah499" target="_blank" rel="noopener">Open GitHub</a>
-      </p>
+   <section class="section" id="contact">
+  <h2>Contact</h2>
 
-      <p style="margin-top:14px;color:var(--muted2)">
-        Location: Salt Lake City, UT • Phone: <span class="chip" id="phone">385-228-0538</span>
-      </p>
-    </section>
+  <p style="margin-top:8px;color:var(--muted)">
+    Email:
+    <a class="chip" href="mailto:prathamshah0103@gmail.com">
+      prathamshah0103@gmail.com
+    </a>
 
-    <div class="footer">
-      <div>© <span id="year"></span> Pratham Shah • Built with GitHub Pages</div>
-    </div>
+    <span style="opacity:.6">•</span>
 
-  </div>
+    LinkedIn:
+    <a class="chip"
+       href="https://www.linkedin.com/in/prathamshah4999"
+       target="_blank"
+       rel="noopener">
+       Open Profile
+    </a>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    <span style="opacity:.6">•</span>
 
-    fetch("resume.pdf", { method: "HEAD" })
-      .then(r => { if (!r.ok) console.warn("resume.pdf not found in repo root. Upload it as 'resume.pdf'."); })
-      .catch(() => console.warn("Could not check resume.pdf. Upload it as 'resume.pdf'."));
+    GitHub:
+    <a class="chip"
+       href="https://github.com/Pratham-shah499"
+       target="_blank"
+       rel="noopener">
+       Open GitHub
+    </a>
+  </p>
 
-    // Optional: set LinkedIn if you want it visible.
-    // Put your real URL between the quotes and it will show automatically.
-    const LINKEDIN = ""; // e.g. "https://www.linkedin.com/in/your-handle/"
+  <p style="margin-top:14px;color:var(--muted2)">
+    Location: Salt Lake City, UT
+    <span style="opacity:.6">•</span>
+    Phone: <span class="chip">385-228-0538</span>
+  </p>
+</section>
 
-    const linkedinLink = document.getElementById("linkedinLink");
-    if (LINKEDIN && linkedinLink) {
-      linkedinLink.href = LINKEDIN;
-      linkedinLink.style.display = "inline-flex";
-    }
-  </script>
+<div class="footer">
+  <div>© <span id="year"></span> Pratham Shah • Built with GitHub Pages</div>
+</div>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
