@@ -33,7 +33,7 @@
     body {
       font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
       color: var(--text);
-      background: 
+      background:
         radial-gradient(1000px 800px at 15% 15%, rgba(108,171,221,0.28), transparent 58%),
         radial-gradient(900px 750px at 85% 20%, rgba(167,216,240,0.16), transparent 55%),
         radial-gradient(900px 700px at 50% 95%, rgba(243,178,41,0.10), transparent 60%),
@@ -163,7 +163,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: 
+      background:
         radial-gradient(900px 700px at 20% 20%, rgba(108,171,221,0.22), transparent 55%),
         radial-gradient(900px 700px at 80% 30%, rgba(167,216,240,0.18), transparent 55%),
         linear-gradient(180deg, rgba(6,9,20,0.35), rgba(6,9,20,0.65));
@@ -469,6 +469,16 @@
       border-radius: 999px;
       font-size: 11px;
       color: rgba(255,255,255,0.75);
+    }
+
+    /* interactive skill tags */
+    .skill-tag {
+      cursor: pointer;
+    }
+
+    .skill-tag:hover {
+      border-color: rgba(167,216,240,0.5);
+      background: rgba(167,216,240,0.12);
     }
 
     .card .outcome {
@@ -828,7 +838,7 @@
     <!-- Hero -->
     <section class="hero">
       <div class="hero-bg">
-        <img src="assets/img/photo9.jpg" alt="">
+        <img src="assets/img/photo9.jpg" alt="Teaching analytics session">
       </div>
       <div class="hero-content">
         <div class="hero-main">
@@ -853,12 +863,12 @@
             </a>
           </div>
         </div>
-        
+
         <div class="hero-card">
           <div class="hero-card-inner">
             <div class="profile-row">
               <div class="profile-img">
-                <img src="assets/img/photo4.jpg" alt="Pratham Shah">
+                <img src="assets/img/photo4.jpg" alt="Pratham Shah headshot">
               </div>
               <div class="profile-info">
                 <div class="label">Highlights</div>
@@ -905,13 +915,13 @@
       </p>
       <div class="photo-grid">
         <div class="photo-item">
-          <img src="assets/img/photo9.jpg" alt="Classroom session">
+          <img src="assets/img/photo9.jpg" alt="Classroom analytics session">
         </div>
         <div class="photo-item">
-          <img src="assets/img/photo10.jpg" alt="Collaboration">
+          <img src="assets/img/photo10.jpg" alt="Team collaboration on systems project">
         </div>
         <div class="photo-item">
-          <img src="assets/img/photo1.jpg" alt="Teaching">
+          <img src="assets/img/photo1.jpg" alt="Teaching support for information systems course">
         </div>
       </div>
     </section>
@@ -934,29 +944,41 @@
       <div class="skills-grid">
         <div class="skill-card">
           <h4>Languages</h4>
-          <p>Python, SQL, PHP, JavaScript, Java, C++, HTML, CSS</p>
+          <p>Click a skill to see a quick definition and open its reference.</p>
           <div class="tags">
-            <span class="tag">Backend</span>
-            <span class="tag">Web</span>
-            <span class="tag">Scripting</span>
+            <span class="tag skill-tag" data-skill="Python" data-wiki="Python_(programming_language)">Python</span>
+            <span class="tag skill-tag" data-skill="SQL" data-wiki="SQL">SQL</span>
+            <span class="tag skill-tag" data-skill="PHP" data-wiki="PHP">PHP</span>
+            <span class="tag skill-tag" data-skill="JavaScript" data-wiki="JavaScript">JavaScript</span>
+            <span class="tag skill-tag" data-skill="Java" data-wiki="Java_(programming_language)">Java</span>
+            <span class="tag skill-tag" data-skill="C++" data-wiki="C%2B%2B">C++</span>
+            <span class="tag skill-tag" data-skill="HTML" data-wiki="HTML">HTML</span>
+            <span class="tag skill-tag" data-skill="CSS" data-wiki="CSS">CSS</span>
           </div>
         </div>
         <div class="skill-card">
           <h4>Tools</h4>
-          <p>MySQL, Git, Tableau, Excel (Analytics), VS Code, phpMyAdmin</p>
+          <p>Technologies used across analytics, BI, and development workflows.</p>
           <div class="tags">
-            <span class="tag">Databases</span>
-            <span class="tag">BI</span>
-            <span class="tag">Dev Tools</span>
+            <span class="tag skill-tag" data-skill="MySQL" data-wiki="MySQL">MySQL</span>
+            <span class="tag skill-tag" data-skill="Git" data-wiki="Git">Git</span>
+            <span class="tag skill-tag" data-skill="Tableau" data-wiki="Tableau_Software">Tableau</span>
+            <span class="tag skill-tag" data-skill="Excel" data-wiki="Microsoft_Excel">Excel (Analytics)</span>
+            <span class="tag skill-tag" data-skill="VS Code" data-wiki="Visual_Studio_Code">VS Code</span>
+            <span class="tag skill-tag" data-skill="phpMyAdmin" data-wiki="PhpMyAdmin">phpMyAdmin</span>
           </div>
         </div>
         <div class="skill-card">
           <h4>Concepts</h4>
-          <p>Data Modeling, ETL, RBAC, OOP, MVC Architecture, Networking, Azure Cloud</p>
+          <p>Core information systems and architecture concepts.</p>
           <div class="tags">
-            <span class="tag">Systems</span>
-            <span class="tag">Security</span>
-            <span class="tag">Cloud</span>
+            <span class="tag skill-tag" data-skill="Data Modeling" data-wiki="Data_modeling">Data Modeling</span>
+            <span class="tag skill-tag" data-skill="ETL" data-wiki="Extract,_transform,_load">ETL</span>
+            <span class="tag skill-tag" data-skill="RBAC" data-wiki="Role-based_access_control">RBAC</span>
+            <span class="tag skill-tag" data-skill="OOP" data-wiki="Object-oriented_programming">OOP</span>
+            <span class="tag skill-tag" data-skill="MVC Architecture" data-wiki="Model–view–controller">MVC Architecture</span>
+            <span class="tag skill-tag" data-skill="Networking" data-wiki="Computer_network">Networking</span>
+            <span class="tag skill-tag" data-skill="Azure Cloud" data-wiki="Microsoft_Azure">Azure Cloud</span>
           </div>
         </div>
         <div class="skill-card">
@@ -1002,7 +1024,7 @@
   </div>
 
   <!-- Scroll to Top -->
-  <div class="scroll-top" id="scrollTop">↑</div>
+  <div class="scroll-top" id="scrollTop" aria-label="Scroll to top">↑</div>
 
   <!-- Modal -->
   <div class="modal-overlay" id="modalOverlay">
@@ -1014,7 +1036,7 @@
             <h2 id="modalTitle"></h2>
             <p class="subtitle" id="modalSubtitle"></p>
           </div>
-          <button class="modal-close" id="modalClose">&times;</button>
+          <button class="modal-close" id="modalClose" aria-label="Close modal">&times;</button>
         </div>
         <div class="modal-body" id="modalBody"></div>
       </div>
@@ -1024,6 +1046,39 @@
   <script>
     // Update year
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Scroll to top
+    const scrollTopBtn = document.getElementById('scrollTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        scrollTopBtn.classList.add('visible');
+      } else {
+        scrollTopBtn.classList.remove('visible');
+      }
+    });
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Modal elements
+    const modalOverlay = document.getElementById('modalOverlay');
+    const modalBg = document.getElementById('modalBg');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalSubtitle = document.getElementById('modalSubtitle');
+    const modalBody = document.getElementById('modalBody');
+    const modalClose = document.getElementById('modalClose');
+
+    function closeModal() {
+      modalOverlay.classList.remove('active');
+    }
+
+    modalClose.addEventListener('click', closeModal);
+    modalOverlay.addEventListener('click', (e) => {
+      if (e.target === modalOverlay) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
 
     // Project data
     const projects = [
@@ -1236,10 +1291,26 @@
           <div class="tags">
             ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
           </div>
-          <p class="outcome"><strong>Outcome:</strong> ${project.outcome}</p>
+          <div class="outcome"><strong>Outcome:</strong> ${project.outcome}</div>
         </div>
       `;
-      card.addEventListener('click', () => openProjectModal(project));
+      card.addEventListener('click', () => {
+        modalBg.innerHTML = project.image ? `<img src="${project.image}" alt="${project.title}">` : '';
+        modalTitle.textContent = project.title;
+        modalSubtitle.textContent = 'Project details, features, and impact';
+        modalBody.innerHTML = `
+          <p>${project.details.overview}</p>
+          <h4>Key Features</h4>
+          <ul>
+            ${project.details.features.map(f => `<li>${f}</li>`).join('')}
+          </ul>
+          <h4>Outcome</h4>
+          <p>${project.details.outcome}</p>
+          <h4>Technologies</h4>
+          <p>${project.details.technologies.join(', ')}</p>
+        `;
+        modalOverlay.classList.add('active');
+      });
       projectGrid.appendChild(card);
     });
 
@@ -1250,123 +1321,76 @@
       card.className = 'timeline-card';
       card.innerHTML = `
         <h4>${exp.title}</h4>
-        <p class="company">${exp.company} • ${exp.date}</p>
-        <ul>
-          ${exp.details.responsibilities.slice(0, 3).map(r => `<li>${r}</li>`).join('')}
-        </ul>
+        <div class="company">${exp.company} • ${exp.date}</div>
+        <p>${exp.details.description}</p>
       `;
-      card.addEventListener('click', () => openExperienceModal(exp));
+      card.addEventListener('click', () => {
+        modalBg.innerHTML = exp.image ? `<img src="${exp.image}" alt="${exp.title}">` : '';
+        modalTitle.textContent = exp.title;
+        modalSubtitle.textContent = `${exp.company} • ${exp.date}`;
+        modalBody.innerHTML = `
+          <p>${exp.details.description}</p>
+          <h4>Key Responsibilities</h4>
+          <ul>
+            ${exp.details.responsibilities.map(r => `<li>${r}</li>`).join('')}
+          </ul>
+          <h4>Impact</h4>
+          <p>${exp.details.impact}</p>
+          <h4>Skills</h4>
+          <p>${exp.details.skills.join(', ')}</p>
+        `;
+        modalOverlay.classList.add('active');
+      });
       experienceGrid.appendChild(card);
     });
 
-    // Modal functions
-    const modalOverlay = document.getElementById('modalOverlay');
-    const modalClose = document.getElementById('modalClose');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalSubtitle = document.getElementById('modalSubtitle');
-    const modalBody = document.getElementById('modalBody');
-    const modalBg = document.getElementById('modalBg');
+    // Skill definitions for modal
+    const skillDefinitions = {
+      'Python': 'Python is a high-level, general-purpose programming language widely used for data analysis, automation, and web development.',
+      'SQL': 'SQL (Structured Query Language) is used to manage and query data stored in relational database management systems.',
+      'PHP': 'PHP is a server-side scripting language used primarily for building dynamic web applications and APIs.',
+      'JavaScript': 'JavaScript is a programming language that runs in the browser and on servers, enabling interactive web experiences.',
+      'Java': 'Java is an object-oriented programming language commonly used for large-scale enterprise applications and Android development.',
+      'C++': 'C++ is a high-performance programming language used for systems software, game engines, and performance-critical applications.',
+      'HTML': 'HTML (HyperText Markup Language) defines the structure and content of web pages.',
+      'CSS': 'CSS (Cascading Style Sheets) controls the presentation and layout of HTML content.',
+      'MySQL': 'MySQL is an open-source relational database management system widely used in web applications.',
+      'Git': 'Git is a distributed version control system used to track changes in source code and collaborate on software projects.',
+      'Tableau': 'Tableau is a business intelligence tool used to build interactive dashboards and data visualizations.',
+      'Excel': 'Microsoft Excel is a spreadsheet application used for data analysis, modeling, and reporting.',
+      'VS Code': 'Visual Studio Code is a lightweight code editor with support for debugging, git, and extensions.',
+      'phpMyAdmin': 'phpMyAdmin is a web-based tool for managing MySQL databases through a graphical interface.',
+      'Data Modeling': 'Data modeling is the process of designing the structure of a database to represent real-world entities and relationships.',
+      'ETL': 'ETL (Extract, Transform, Load) is the process of moving and transforming data from source systems into a target data store.',
+      'RBAC': 'Role-Based Access Control (RBAC) restricts system access based on roles assigned to users.',
+      'OOP': 'Object-oriented programming (OOP) organizes code around objects that combine data and behavior.',
+      'MVC Architecture': 'Model–View–Controller (MVC) is a software architectural pattern that separates application logic, UI, and data.',
+      'Networking': 'Computer networking connects devices and systems to share data and resources.',
+      'Azure Cloud': 'Microsoft Azure is a cloud computing platform offering infrastructure, platform, and software services.'
+    };
 
-    function openProjectModal(project) {
-      modalTitle.textContent = project.title;
-      modalSubtitle.textContent = project.description;
-      
-      if (project.image) {
-        modalBg.innerHTML = `<img src="${project.image}" alt="">`;
-      }
-      
-      modalBody.innerHTML = `
-        <h4>Overview</h4>
-        <p>${project.details.overview}</p>
-        
-        <h4>Key Features</h4>
-        <ul>
-          ${project.details.features.map(f => `<li>${f}</li>`).join('')}
-        </ul>
-        
-        <h4>Outcome</h4>
-        <p>${project.details.outcome}</p>
-        
-        <h4>Technologies Used</h4>
-        <div class="tags">
-          ${project.details.technologies.map(tech => `<span class="tag">${tech}</span>`).join('')}
-        </div>
-      `;
-      
-      modalOverlay.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
+    // Skill tag click handler
+    const skillTags = document.querySelectorAll('.skill-tag');
+    skillTags.forEach(tag => {
+      tag.addEventListener('click', () => {
+        const name = tag.dataset.skill || tag.textContent.trim();
+        const wikiSlug = tag.dataset.wiki;
+        const definition = skillDefinitions[name] || 'View more details on Wikipedia.';
 
-    function openExperienceModal(exp) {
-      modalTitle.textContent = exp.title;
-      modalSubtitle.textContent = `${exp.company} • ${exp.date}`;
-      
-      if (exp.image) {
-        modalBg.innerHTML = `<img src="${exp.image}" alt="">`;
-      }
-      
-      modalBody.innerHTML = `
-        <h4>Description</h4>
-        <p>${exp.details.description}</p>
-        
-        <h4>Key Responsibilities</h4>
-        <ul>
-          ${exp.details.responsibilities.map(r => `<li>${r}</li>`).join('')}
-        </ul>
-        
-        <h4>Impact</h4>
-        <p>${exp.details.impact}</p>
-        
-        <h4>Skills Utilized</h4>
-        <div class="tags">
-          ${exp.details.skills.map(skill => `<span class="tag">${skill}</span>`).join('')}
-        </div>
-      `;
-      
-      modalOverlay.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeModal() {
-      modalOverlay.classList.remove('active');
-      document.body.style.overflow = '';
-      modalBg.innerHTML = '';
-    }
-
-    modalClose.addEventListener('click', closeModal);
-    modalOverlay.addEventListener('click', (e) => {
-      if (e.target === modalOverlay) closeModal();
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
-        closeModal();
-      }
-    });
-
-    // Scroll to top button
-    const scrollTop = document.getElementById('scrollTop');
-    
-    window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 300) {
-        scrollTop.classList.add('visible');
-      } else {
-        scrollTop.classList.remove('visible');
-      }
-    });
-
-    scrollTop.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    // Smooth scroll for nav links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+        modalBg.innerHTML = ''; // neutral background for skills
+        modalTitle.textContent = name;
+        modalSubtitle.textContent = 'Quick definition and reference';
+        modalBody.innerHTML = `
+          <p>${definition}</p>
+          ${
+            wikiSlug
+              ? `<p><a href="https://en.wikipedia.org/wiki/${wikiSlug}" target="_blank" style="color: #A7D8F0; text-decoration: underline;">
+                   Open Wikipedia article
+                 </a></p>`
+              : ''
+          }
+        `;
+        modalOverlay.classList.add('active');
       });
     });
   </script>
