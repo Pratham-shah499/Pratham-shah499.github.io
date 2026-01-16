@@ -1,922 +1,1374 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pratham Shah | Information Systems</title>
-  <meta name="description" content="Pratham Shah — Information Systems graduate specializing in data, systems, and analytics. Projects in PHP/MySQL, SQL databases, and enterprise network/cloud architecture." />
-
-  <meta property="og:title" content="Pratham Shah | Information Systems" />
-  <meta property="og:description" content="Portfolio: projects, skills, and resume." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://pratham-shah499.github.io/" />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pratham Shah | Information Systems Portfolio</title>
+  <meta name="description" content="Information Systems graduate specializing in data analytics, databases, and enterprise systems">
   <style>
-    :root{
+    :root {
       --bg: #07131f;
       --panel: rgba(255,255,255,0.08);
-      --panel2: rgba(255,255,255,0.06);
       --border: rgba(255,255,255,0.14);
       --text: rgba(255,255,255,0.92);
       --muted: rgba(255,255,255,0.70);
       --muted2: rgba(255,255,255,0.58);
       --shadow: 0 18px 60px rgba(0,0,0,0.45);
       --radius: 18px;
-      --max: 1100px;
-
-      /* Man City-inspired (professional) */
-      --acc1: #6CABDD; /* sky blue */
-      --acc2: #0B1F41; /* navy */
-      --acc3: #A7D8F0; /* light accent */
-      --acc4: #F3B229; /* subtle gold */
+      --accent: #6CABDD;
+      --accent2: #A7D8F0;
+      --accent3: #F3B229;
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
       color: var(--text);
-      background:
+      background: 
         radial-gradient(1000px 800px at 15% 15%, rgba(108,171,221,0.28), transparent 58%),
         radial-gradient(900px 750px at 85% 20%, rgba(167,216,240,0.16), transparent 55%),
         radial-gradient(900px 700px at 50% 95%, rgba(243,178,41,0.10), transparent 60%),
         linear-gradient(180deg, #040912, #07131f 55%, #030710);
-      overflow-x:hidden;
+      min-height: 100vh;
+      overflow-x: hidden;
     }
 
-    body::before{
-      content:"";
+    body::before {
+      content: '';
       position: fixed;
       inset: 0;
       pointer-events: none;
       opacity: 0.08;
-      background-image:
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
       mix-blend-mode: overlay;
+      z-index: 0;
     }
 
-    a { color: inherit; text-decoration: none; }
-    a:focus { outline: 2px solid rgba(167,216,240,0.9); outline-offset: 3px; border-radius: 10px; }
-
-    .wrap{
-      max-width: var(--max);
+    .container {
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 26px 18px 90px;
+      padding: 0 20px;
+      position: relative;
+      z-index: 1;
     }
 
-    .nav{
+    /* Navigation */
+    nav {
       position: sticky;
       top: 14px;
-      z-index: 20;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding: 12px 14px;
-      border: 1px solid rgba(255,255,255,0.10);
+      z-index: 100;
+      margin: 20px 0;
+      padding: 12px 20px;
       background: rgba(10,14,30,0.55);
       backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,0.10);
       border-radius: 16px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
     }
 
-    .brand{
-      display:flex; gap:10px; align-items:center;
-      min-width: 160px;
+    .brand {
+      display: flex;
+      gap: 12px;
+      align-items: center;
     }
 
-    /* updated logo to match theme */
-    .logo{
-      width: 38px; height: 38px; border-radius: 12px;
-      background: radial-gradient(circle at 30% 30%, rgba(108,171,221,0.95), rgba(167,216,240,0.55) 55%, rgba(243,178,41,0.20) 100%);
+    .logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: radial-gradient(circle at 30% 30%, rgba(108,171,221,0.95), rgba(167,216,240,0.55) 55%, rgba(243,178,41,0.20));
       box-shadow: 0 12px 30px rgba(108,171,221,0.18);
       border: 1px solid rgba(255,255,255,0.18);
     }
 
-    .brand b{ font-size: 14px; letter-spacing: 0.3px; }
-    .brand span{ display:block; font-size: 12px; color: var(--muted2); margin-top: 1px; }
-
-    .navlinks{
-      display:flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
+    .brand-text h1 {
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
     }
 
-    .chip{
-      padding: 9px 12px;
+    .brand-text p {
+      font-size: 12px;
+      color: var(--muted2);
+      margin-top: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .nav-link {
+      padding: 9px 14px;
       border-radius: 999px;
       border: 1px solid rgba(255,255,255,0.10);
       background: rgba(255,255,255,0.06);
       color: var(--muted);
-      font-size: 12.5px;
-      transition: transform .15s ease, background .15s ease, border-color .15s ease;
-      user-select: none;
-      white-space: nowrap;
+      font-size: 13px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
     }
-    .chip:hover{
+
+    .nav-link:hover {
       transform: translateY(-1px);
       border-color: rgba(167,216,240,0.35);
       background: rgba(167,216,240,0.08);
       color: var(--text);
     }
 
-    /* HERO */
-    .hero{
-      margin-top: 18px;
-      padding: 40px 22px;
+    /* Hero Section */
+    .hero {
+      margin-top: 20px;
+      padding: 45px 25px;
       border-radius: var(--radius);
       background: linear-gradient(135deg, rgba(255,255,255,0.10), rgba(255,255,255,0.05));
-      border: 1px solid rgba(255,255,255,0.14);
+      border: 1px solid var(--border);
       box-shadow: var(--shadow);
       position: relative;
       overflow: hidden;
     }
 
-    .heroMedia{
-      position:absolute;
+    .hero-bg {
+      position: absolute;
       inset: 0;
       z-index: 0;
-      pointer-events:none;
+      pointer-events: none;
       opacity: 0.22;
-      transform: scale(1.03);
-      filter: saturate(1.05) contrast(1.02);
     }
-    .heroMedia img{
+
+    .hero-bg img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center;
     }
-    .heroMedia::after{
-      content:"";
-      position:absolute;
+
+    .hero-bg::after {
+      content: '';
+      position: absolute;
       inset: 0;
-      background:
+      background: 
         radial-gradient(900px 700px at 20% 20%, rgba(108,171,221,0.22), transparent 55%),
         radial-gradient(900px 700px at 80% 30%, rgba(167,216,240,0.18), transparent 55%),
         linear-gradient(180deg, rgba(6,9,20,0.35), rgba(6,9,20,0.65));
     }
 
-    .hero::after{
-      content:"";
-      position:absolute;
-      right:-140px; top:-180px;
-      width: 420px; height: 420px;
-      background: radial-gradient(circle at 30% 30%, rgba(243,178,41,0.22), transparent 60%),
-                  radial-gradient(circle at 55% 55%, rgba(108,171,221,0.26), transparent 62%),
-                  radial-gradient(circle at 70% 30%, rgba(167,216,240,0.18), transparent 60%);
-      filter: blur(14px);
-      opacity: .9;
-      transform: rotate(12deg);
-      z-index: 0;
-    }
-
-    .heroGrid{
-      display:grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 22px;
+    .hero-content {
       position: relative;
       z-index: 1;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 25px;
     }
 
-    .kicker{
-      display:inline-flex;
-      gap:10px;
-      align-items:center;
-      padding: 8px 12px;
+    .hero-main .status {
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      padding: 8px 14px;
       border-radius: 999px;
       background: rgba(255,255,255,0.06);
       border: 1px solid rgba(255,255,255,0.12);
+      font-size: 13px;
       color: var(--muted);
-      font-size: 12.5px;
+      margin-bottom: 15px;
     }
 
-    .dot{
-      width: 8px; height: 8px; border-radius: 50%;
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
       background: rgba(243,178,41,0.95);
       box-shadow: 0 0 0 6px rgba(243,178,41,0.10);
+      animation: pulse 2s infinite;
     }
 
-    h1{
-      margin: 14px 0 8px;
-      font-size: clamp(34px, 4vw, 56px);
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    .hero-main h2 {
+      font-size: clamp(36px, 5vw, 58px);
+      margin-bottom: 12px;
       letter-spacing: -0.03em;
       line-height: 1.05;
     }
-    .subtitle{
+
+    .hero-main .subtitle {
+      font-size: clamp(16px, 2vw, 19px);
       color: var(--muted);
-      font-size: clamp(15px, 1.5vw, 18px);
-      line-height: 1.5;
-      max-width: 56ch;
+      line-height: 1.6;
+      margin-bottom: 25px;
     }
 
-    .ctaRow{
-      display:flex;
+    .cta-buttons {
+      display: flex;
       gap: 12px;
       flex-wrap: wrap;
-      margin-top: 18px;
     }
 
-    .btn{
-      display:inline-flex;
-      gap:10px;
-      align-items:center;
-      padding: 11px 14px;
+    .btn {
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      padding: 12px 18px;
       border-radius: 14px;
-      border: 1px solid rgba(255,255,255,0.16);
-      background: rgba(255,255,255,0.08);
-      color: var(--text);
+      text-decoration: none;
+      font-size: 14px;
       font-weight: 600;
-      font-size: 13.5px;
-      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+      transition: all 0.3s ease;
       cursor: pointer;
-      user-select: none;
     }
-    .btn:hover{
-      transform: translateY(-1px);
-      border-color: rgba(167,216,240,0.35);
-      background: rgba(167,216,240,0.10);
-    }
-    .btn.primary{
+
+    .btn-primary {
       background: linear-gradient(135deg, rgba(108,171,221,0.95), rgba(167,216,240,0.55));
-      border-color: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: white;
       box-shadow: 0 14px 40px rgba(108,171,221,0.20);
     }
-    .btn.primary:hover{
-      background: linear-gradient(135deg, rgba(108,171,221,0.98), rgba(167,216,240,0.62));
-      border-color: rgba(255,255,255,0.25);
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 50px rgba(108,171,221,0.30);
     }
 
-    .heroCard{
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,0.14);
+    .btn-secondary {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.16);
+      color: var(--text);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(167,216,240,0.10);
+      border-color: rgba(167,216,240,0.35);
+      transform: translateY(-2px);
+    }
+
+    /* Hero Card */
+    .hero-card {
       background: rgba(255,255,255,0.06);
-      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 20px;
       box-shadow: 0 14px 40px rgba(0,0,0,0.25);
       position: relative;
       overflow: hidden;
     }
-    .heroCard::before{
-      content:"";
-      position:absolute;
-      inset:-2px;
+
+    .hero-card::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
       background: radial-gradient(circle at 20% 20%, rgba(167,216,240,0.16), transparent 55%),
-                  radial-gradient(circle at 80% 30%, rgba(108,171,221,0.16), transparent 55%),
-                  radial-gradient(circle at 50% 80%, rgba(243,178,41,0.08), transparent 60%);
+                  radial-gradient(circle at 80% 30%, rgba(108,171,221,0.16), transparent 55%);
       filter: blur(10px);
-      opacity: 1;
       z-index: 0;
     }
-    .heroCardInner{
+
+    .hero-card-inner {
       position: relative;
       z-index: 1;
-      display:flex;
-      flex-direction: column;
-      gap: 14px;
     }
 
-    .portraitRow{
-      display:flex;
+    .profile-row {
+      display: flex;
       gap: 12px;
-      align-items:center;
+      align-items: center;
+      margin-bottom: 18px;
     }
-    .portrait{
-      width: 64px;
-      height: 64px;
+
+    .profile-img {
+      width: 65px;
+      height: 65px;
       border-radius: 16px;
       border: 1px solid rgba(255,255,255,0.16);
-      overflow:hidden;
-      background: rgba(0,0,0,0.22);
-      flex: 0 0 auto;
+      overflow: hidden;
     }
-    .portrait img{
+
+    .profile-img img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center;
     }
 
-    .miniTitle{ font-size: 12px; color: var(--muted2); letter-spacing: .08em; text-transform: uppercase; }
-
-    .stat{
-      display:flex; justify-content: space-between; gap: 12px;
-      padding: 10px 12px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,0.10);
-      background: rgba(0,0,0,0.18);
-    }
-    .stat b{ font-size: 13.5px; }
-    .stat span{ color: var(--muted); font-size: 12.5px; }
-
-    /* Sections */
-    .section{
-      margin-top: 26px;
-      padding: 22px;
-      border-radius: var(--radius);
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      box-shadow: 0 14px 40px rgba(0,0,0,0.22);
-    }
-    .section h2{
-      margin: 0 0 12px;
-      font-size: 18px;
-      letter-spacing: -0.01em;
-    }
-    .section p{ margin: 8px 0 0; color: var(--muted); }
-
-    .grid2{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin-top: 14px;
+    .profile-info .label {
+      font-size: 11px;
+      color: var(--muted2);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 3px;
     }
 
-    .card{
-      border-radius: 16px;
-      padding: 16px;
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(255,255,255,0.05);
-      transition: transform .15s ease, border-color .15s ease, background .15s ease;
-    }
-    .card:hover{
-      transform: translateY(-2px);
-      border-color: rgba(167,216,240,0.35);
-      background: rgba(167,216,240,0.06);
-    }
-    .card h3{
-      margin: 0 0 8px;
-      font-size: 15px;
-      letter-spacing: -0.01em;
-    }
-
-    .meta{
-      display:flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 10px;
-    }
-    .tag{
-      font-size: 12px;
-      color: rgba(255,255,255,0.75);
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.10);
-      padding: 6px 10px;
-      border-radius: 999px;
-    }
-
-    .split{
-      display:grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 16px;
-      margin-top: 12px;
-    }
-
-    .list{
-      margin: 10px 0 0;
-      padding-left: 18px;
+    .profile-info .value {
+      font-size: 13px;
       color: var(--muted);
     }
-    .list li{ margin: 10px 0; }
 
-    .footer{
-      margin-top: 18px;
-      text-align: center;
-      color: var(--muted2);
-      font-size: 12.5px;
+    .stat-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 11px 14px;
+      background: rgba(0,0,0,0.18);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 14px;
+      margin-bottom: 10px;
     }
 
-    .photoStrip{
-      display:grid;
+    .stat-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .stat-item strong {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .stat-item span {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* Section */
+    .section {
+      margin: 30px 0;
+      padding: 25px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius);
+      box-shadow: 0 14px 40px rgba(0,0,0,0.22);
+    }
+
+    .section h3 {
+      font-size: 22px;
+      margin-bottom: 15px;
+      letter-spacing: -0.01em;
+    }
+
+    .section p {
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+
+    /* Photo Grid */
+    .photo-grid {
+      display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-top: 14px;
+      gap: 14px;
+      margin-top: 20px;
     }
-    .photo{
+
+    .photo-item {
       border-radius: 16px;
       border: 1px solid rgba(255,255,255,0.12);
-      overflow:hidden;
-      background: rgba(0,0,0,0.18);
-      box-shadow: 0 10px 28px rgba(0,0,0,0.22);
-      aspect-ratio: 16 / 10;
-    }
-    .photo img{
-      width:100%;
-      height:100%;
-      object-fit: cover;
-      object-position: center;
-      display:block;
-      transform: scale(1.01);
-    }
-
-    @media (max-width: 880px){
-      .heroGrid{ grid-template-columns: 1fr; }
-      .split{ grid-template-columns: 1fr; }
-      .grid2{ grid-template-columns: 1fr; }
-      .nav{ gap: 10px; }
-      .photoStrip{ grid-template-columns: 1fr; }
-    }
-
-    /* ===== Modal (Popup) ===== */
-    .modalOverlay{
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.70);
-      backdrop-filter: blur(8px);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-      padding: 18px;
-    }
-    .modalOverlay.open{ display:flex; }
-
-    .modal{
-      width: min(980px, 100%);
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,0.14);
-      background: rgba(10,14,30,0.78);
-      box-shadow: 0 24px 90px rgba(0,0,0,0.60);
       overflow: hidden;
+      aspect-ratio: 16/10;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.22);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .photo-item:hover {
+      transform: scale(1.05);
+    }
+
+    .photo-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Project Grid */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px;
+      padding: 20px;
+      transition: all 0.3s ease;
+      cursor: pointer;
       position: relative;
+      overflow: hidden;
     }
 
-    .modalBg{
-      position:absolute;
-      inset:0;
-      background-size: cover;
-      background-position: center;
-      filter: saturate(1.05) contrast(1.05);
-      opacity: 0.20;
-      transform: scale(1.03);
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(108,171,221,0.1), transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
     }
 
-    .modalBg::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:
-        radial-gradient(900px 650px at 20% 20%, rgba(255,255,255,0.08), transparent 60%),
-        linear-gradient(180deg, rgba(6,9,20,0.35), rgba(6,9,20,0.85));
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(167,216,240,0.35);
+      background: rgba(167,216,240,0.06);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
     }
 
-    .modalInner{
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card-content {
       position: relative;
       z-index: 1;
-      padding: 18px;
     }
 
-    .modalTop{
-      display:flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 14px;
+    .card h4 {
+      font-size: 17px;
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
       margin-bottom: 12px;
     }
 
-    .modalTitle{
-      margin: 0;
-      font-size: 18px;
-      letter-spacing: -0.01em;
-    }
-
-    .modalSub{
-      margin: 6px 0 0;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.45;
-    }
-
-    .modalBody{
-      color: var(--text);
-      line-height: 1.6;
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
       margin-top: 12px;
     }
 
-    .modalClose{
+    .tag {
+      padding: 6px 11px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 999px;
+      font-size: 11px;
+      color: rgba(255,255,255,0.75);
+    }
+
+    .card .outcome {
+      margin-top: 14px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .card .outcome strong {
+      color: var(--text);
+    }
+
+    /* Experience Timeline */
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .timeline-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px;
+      padding: 20px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .timeline-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(167,216,240,0.35);
+      background: rgba(167,216,240,0.06);
+    }
+
+    .timeline-card h4 {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .timeline-card .company {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .timeline-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 12px 0 0 0;
+    }
+
+    .timeline-card li {
+      font-size: 13px;
+      color: var(--muted);
+      padding: 6px 0;
+      padding-left: 18px;
+      position: relative;
+      line-height: 1.6;
+    }
+
+    .timeline-card li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .skill-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px;
+      padding: 20px;
+    }
+
+    .skill-card h4 {
+      font-size: 16px;
+      margin-bottom: 12px;
+      color: var(--accent2);
+    }
+
+    .skill-card p {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    /* Contact Section */
+    .contact-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin-top: 15px;
+    }
+
+    .contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 999px;
+      font-size: 13px;
+      color: var(--muted);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .contact-item:hover {
+      background: rgba(167,216,240,0.08);
+      border-color: rgba(167,216,240,0.35);
+      color: var(--text);
+      transform: translateY(-1px);
+    }
+
+    /* Modal */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.75);
+      backdrop-filter: blur(10px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 20px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    .modal {
+      width: min(850px, 100%);
+      max-height: 85vh;
+      overflow-y: auto;
+      background: rgba(13,17,30,0.95);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      box-shadow: 0 25px 90px rgba(0,0,0,0.70);
+      position: relative;
+      transform: scale(0.9);
+      transition: transform 0.3s ease;
+    }
+
+    .modal-overlay.active .modal {
+      transform: scale(1);
+    }
+
+    .modal-bg {
+      position: absolute;
+      inset: 0;
+      opacity: 0.18;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .modal-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .modal-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(6,9,20,0.4), rgba(6,9,20,0.90));
+    }
+
+    .modal-content {
+      position: relative;
+      z-index: 1;
+      padding: 30px;
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 25px;
+      gap: 20px;
+    }
+
+    .modal-close {
+      width: 38px;
+      height: 38px;
       border: 1px solid rgba(255,255,255,0.16);
       background: rgba(255,255,255,0.08);
       color: var(--text);
-      border-radius: 12px;
-      padding: 10px 12px;
+      border-radius: 10px;
       cursor: pointer;
-      font-weight: 700;
-    }
-    .modalClose:hover{
-      background: rgba(255,255,255,0.12);
-    }
-
-    .modalLinks{
-      display:flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 14px;
+      font-size: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      flex-shrink: 0;
     }
 
-    .clickCard{ cursor: pointer; }
+    .modal-close:hover {
+      background: var(--accent);
+      transform: rotate(90deg);
+      border-color: var(--accent);
+    }
+
+    .modal h2 {
+      font-size: 26px;
+      margin-bottom: 8px;
+    }
+
+    .modal .subtitle {
+      font-size: 15px;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .modal-body h4 {
+      font-size: 17px;
+      color: var(--accent2);
+      margin: 20px 0 12px 0;
+    }
+
+    .modal-body h4:first-child {
+      margin-top: 0;
+    }
+
+    .modal-body p {
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+
+    .modal-body ul {
+      list-style: none;
+      padding: 0;
+      margin: 12px 0;
+    }
+
+    .modal-body li {
+      color: var(--muted);
+      padding: 8px 0;
+      padding-left: 22px;
+      position: relative;
+      line-height: 1.7;
+    }
+
+    .modal-body li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--muted2);
+      font-size: 13px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      margin-top: 40px;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+      }
+
+      .project-grid,
+      .timeline,
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-grid {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: flex-start;
+      }
+    }
+
+    /* Scroll to top button */
+    .scroll-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 50%;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 20px;
+      color: white;
+      box-shadow: 0 8px 25px rgba(108,171,221,0.30);
+      transition: all 0.3s ease;
+      z-index: 99;
+    }
+
+    .scroll-top.visible {
+      display: flex;
+    }
+
+    .scroll-top:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(108,171,221,0.40);
+    }
   </style>
 </head>
-
 <body>
-  <div class="wrap">
-
-    <div class="nav" role="navigation" aria-label="Primary">
+  <div class="container">
+    <!-- Navigation -->
+    <nav>
       <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
-        <div>
-          <b>Pratham Shah</b>
-          <span>Information Systems • Data • Systems</span>
+        <div class="logo"></div>
+        <div class="brand-text">
+          <h1>Pratham Shah</h1>
+          <p>Information Systems • Data • Systems</p>
         </div>
       </div>
-
-      <div class="navlinks">
-        <a class="chip" href="#about">About</a>
-        <a class="chip" href="#projects">Projects</a>
-        <a class="chip" href="#experience">Experience</a>
-        <a class="chip" href="#skills">Skills</a>
-        <a class="chip" href="#contact">Contact</a>
+      <div class="nav-links">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#contact" class="nav-link">Contact</a>
       </div>
-    </div>
+    </nav>
 
-    <!-- HERO -->
-    <section class="hero" aria-label="Hero">
-      <div class="heroMedia" aria-hidden="true">
-        <img src="assets/img/photo9.jpg" alt="" loading="eager" />
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-bg">
+        <img src="assets/img/photo9.jpg" alt="">
       </div>
-
-      <div class="heroGrid">
-        <div>
-          <div class="kicker"><span class="dot"></span> Open to entry-level roles • Salt Lake City, UT</div>
-          <h1>Pratham Shah</h1>
+      <div class="hero-content">
+        <div class="hero-main">
+          <div class="status">
+            <span class="status-dot"></span>
+            Open to entry-level roles • Salt Lake City, UT
+          </div>
+          <h2>Pratham Shah</h2>
           <p class="subtitle">
-            Information Systems graduate focused on <b>data analytics</b>, <b>databases</b>, and <b>enterprise systems</b>.
+            Information Systems graduate focused on <strong>data analytics</strong>, <strong>databases</strong>, and <strong>enterprise systems</strong>.
             Teaching Assistant supporting 300+ students across analytics, spreadsheets, SQL, and systems coursework.
           </p>
-
-          <div class="ctaRow">
-            <a class="btn primary" href="resume.pdf" target="_blank" rel="noopener">
-              <span class="icon" aria-hidden="true">📄</span> Download Resume
+          <div class="cta-buttons">
+            <a href="resume.pdf" class="btn btn-primary" download>
+              📄 Download Resume
             </a>
-            <a class="btn" href="#projects">
-              <span class="icon" aria-hidden="true">🧩</span> View Projects
+            <a href="#projects" class="btn btn-secondary">
+              🧩 View Projects
             </a>
-            <a class="btn" href="mailto:prathamshah0103@gmail.com" id="emailLink">
-              <span class="icon" aria-hidden="true">✉️</span> Email Me
+            <a href="mailto:prathamshah0103@gmail.com" class="btn btn-secondary">
+              ✉️ Email Me
             </a>
           </div>
         </div>
-
-        <aside class="heroCard" aria-label="Highlights">
-          <div class="heroCardInner">
-            <div class="portraitRow">
-              <div class="portrait">
-                <img src="assets/img/photo4.jpg" alt="Pratham in a classroom setting" loading="lazy" />
+        
+        <div class="hero-card">
+          <div class="hero-card-inner">
+            <div class="profile-row">
+              <div class="profile-img">
+                <img src="assets/img/photo4.jpg" alt="Pratham Shah">
               </div>
-              <div>
-                <div class="miniTitle">Highlights</div>
-                <div style="color: var(--muted); font-size: 12.5px; margin-top: 2px;">
-                  Teaching • Systems • Analytics
-                </div>
+              <div class="profile-info">
+                <div class="label">Highlights</div>
+                <div class="value">Teaching • Systems • Analytics</div>
               </div>
             </div>
-
-            <div class="stat">
-              <b>Teaching Assistant</b>
+            <div class="stat-item">
+              <strong>Teaching Assistant</strong>
               <span>Aug 2025 – Present</span>
             </div>
-            <div class="stat">
-              <b>Projects: PHP/MySQL • SQL</b>
+            <div class="stat-item">
+              <strong>Projects: PHP/MySQL • SQL</strong>
               <span>RBAC • CRUD • Reporting</span>
             </div>
-            <div class="stat">
-              <b>Network + Cloud Design</b>
+            <div class="stat-item">
+              <strong>Network + Cloud Design</strong>
               <span>VLANs • Azure Hybrid AD</span>
             </div>
-            <div class="stat">
-              <b>Recognition</b>
+            <div class="stat-item">
+              <strong>Recognition</strong>
               <span>Adobe Social Impact Challenge Runner-Up</span>
             </div>
           </div>
-        </aside>
+        </div>
       </div>
     </section>
 
-    <!-- ABOUT -->
-    <section class="section" id="about">
-      <h2>About</h2>
+    <!-- About -->
+    <section id="about" class="section">
+      <h3>About</h3>
       <p>
         I am an Information Systems graduate with a strong foundation in data analytics, relational databases, and enterprise systems.
         I have hands-on experience supporting analytics, spreadsheet modeling, and SQL-based coursework while serving as a Teaching Assistant,
         where I assisted more than 300 students with dashboards, data validation, and troubleshooting complex logic issues.
-        <br><br>
+      </p>
+      <p>
         My academic and project work has focused on building practical, business-ready solutions ranging from secure web applications with role-based access control
         to enterprise-scale database design and reporting. I am particularly interested in roles that bridge technology and business, where data, systems,
         and process improvement drive measurable outcomes.
-        <br><br>
+      </p>
+      <p>
         I am currently seeking entry-level opportunities in Business Analytics, Systems Analysis, Data/Reporting, or IT, where I can contribute strong analytical thinking,
         technical problem-solving, and clear communication in fast-paced, team-oriented environments.
       </p>
-
-      <div class="photoStrip" aria-label="About photos">
-        <div class="photo"><img src="assets/img/photo9.jpg" alt="Classroom session" loading="lazy"></div>
-        <div class="photo"><img src="assets/img/photo10.jpg" alt="Collaboration in class" loading="lazy"></div>
-        <div class="photo"><img src="assets/img/photo1.jpg" alt="Lecture environment" loading="lazy"></div>
+      <div class="photo-grid">
+        <div class="photo-item">
+          <img src="assets/img/photo9.jpg" alt="Classroom session">
+        </div>
+        <div class="photo-item">
+          <img src="assets/img/photo10.jpg" alt="Collaboration">
+        </div>
+        <div class="photo-item">
+          <img src="assets/img/photo1.jpg" alt="Teaching">
+        </div>
       </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section class="section" id="projects">
-      <h2>Projects</h2>
-
-      <div class="grid2">
-
-        <article class="card clickCard"
-          data-title="Secure Stadium Ticketing System"
-          data-sub="PHP/MySQL • Authentication • RBAC • CRUD • SQL Reporting"
-          data-body="Full-stack web application implementing authentication and role-based access control (RBAC). Built CRUD workflows for core entities and SQL reporting views for administrative insight. Outcome: implemented secure ticket purchasing and an admin reporting workflow."
-          data-tags="PHP, MySQL, RBAC, CRUD, SQL Reporting"
-          data-bg="assets/img/photo6.jpg"
-          data-link1="https://github.com/Pratham-shah499"
-          data-link1text="GitHub"
-        >
-          <h3>Secure Stadium Ticketing System</h3>
-          <p>
-            Full-stack web application with authentication, role-based access control (RBAC), CRUD operations,
-            and SQL reporting.
-          </p>
-          <div class="meta">
-            <span class="tag">PHP</span>
-            <span class="tag">MySQL</span>
-            <span class="tag">RBAC</span>
-            <span class="tag">CRUD</span>
-            <span class="tag">SQL Reporting</span>
-          </div>
-          <p style="margin-top:12px;color:rgba(255,255,255,0.70);">
-            <b>Outcome:</b> Implemented secure ticket purchasing and admin reporting workflows.
-          </p>
-          <p style="margin-top:12px;">
-            <a class="chip" href="#" target="_blank" rel="noopener">Repo</a>
-            <a class="chip" href="#" target="_blank" rel="noopener">Demo</a>
-          </p>
-        </article>
-
-        <article class="card clickCard"
-          data-title="Enterprise Trading & Portfolio Database"
-          data-sub="SQL • 23-table schema • Normalization • ERD • Analytical Queries"
-          data-body="Designed and documented a normalized database schema to support trading, client accounts, advisors, and compliance requirements. Developed analytical queries to answer business and reporting questions with clean joins and consistent keys."
-          data-tags="SQL, Normalization, ERD, Analytics, Reporting"
-          data-bg="assets/img/photo8.jpg"
-        >
-          <h3>Enterprise Trading & Portfolio Database</h3>
-          <p>
-            Designed a 23-table normalized schema to support trading, accounts, advisors, and compliance with analytical queries.
-          </p>
-          <div class="meta">
-            <span class="tag">SQL</span>
-            <span class="tag">Normalization</span>
-            <span class="tag">ERD</span>
-            <span class="tag">Analytical Queries</span>
-          </div>
-          <p style="margin-top:12px;color:rgba(255,255,255,0.70);">
-            <b>Outcome:</b> Built reporting queries that answer business and compliance questions.
-          </p>
-          <p style="margin-top:12px;">
-            <a class="chip" href="#" target="_blank" rel="noopener">Schema</a>
-            <a class="chip" href="#" target="_blank" rel="noopener">Queries</a>
-          </p>
-        </article>
-
-        <article class="card clickCard"
-          data-title="Enterprise Network & Cloud Architecture"
-          data-sub="Layer 1/Layer 3 • VLAN Segmentation • Azure Hybrid AD • Security"
-          data-body="Designed an enterprise network including Layer 1 and Layer 3 plans with VLAN segmentation and structured IP allocation. Documented identity and access approach with Azure hybrid AD considerations and security controls aligned to enterprise design practices."
-          data-tags="Networking, VLANs, Layer 3, Azure Hybrid AD, Security"
-          data-bg="assets/img/photo2.jpg"
-        >
-          <h3>Enterprise Network & Cloud Architecture</h3>
-          <p>
-            Designed Layer 1 & Layer 3 enterprise network with VLAN segmentation and Azure hybrid AD integration.
-          </p>
-          <div class="meta">
-            <span class="tag">Layer 3 IP Plan</span>
-            <span class="tag">VLANs</span>
-            <span class="tag">Azure Hybrid AD</span>
-            <span class="tag">Security</span>
-          </div>
-          <p style="margin-top:12px;color:rgba(255,255,255,0.70);">
-            <b>Outcome:</b> Documented secure enterprise networking and identity workflows.
-          </p>
-          <p style="margin-top:12px;">
-            <a class="chip" href="#" target="_blank" rel="noopener">Diagram</a>
-            <a class="chip" href="#" target="_blank" rel="noopener">Write-up</a>
-          </p>
-        </article>
-
-        <article class="card clickCard"
-          data-title="Teaching Support: Analytics & Systems"
-          data-sub="Excel Dashboards • SQL Troubleshooting • Systems Support • Student Success"
-          data-body="Supported 300+ students weekly with dashboards, PivotTables, advanced Excel functions, SQL troubleshooting, and systems design issues. Outcome: improved grading accuracy and reduced rework by correcting complex spreadsheet logic and guiding students to correct solutions."
-          data-tags="Excel, Dashboards, SQL, Troubleshooting, Systems"
-          data-bg="assets/img/photo10.jpg"
-        >
-          <h3>Teaching Support: Analytics & Systems</h3>
-          <p>
-            Supported 300+ students weekly with dashboards, PivotTables, advanced Excel functions, SQL troubleshooting,
-            and systems design issues.
-          </p>
-          <div class="meta">
-            <span class="tag">Excel Analytics</span>
-            <span class="tag">Dashboards</span>
-            <span class="tag">SQL</span>
-            <span class="tag">Systems</span>
-          </div>
-          <p style="margin-top:12px;color:rgba(255,255,255,0.70);">
-            <b>Outcome:</b> Improved grading accuracy and reduced rework by correcting complex spreadsheet logic.
-          </p>
-        </article>
-
-      </div>
+    <!-- Projects -->
+    <section id="projects" class="section">
+      <h3>Projects</h3>
+      <div class="project-grid" id="projectGrid"></div>
     </section>
 
-    <!-- EXPERIENCE -->
-    <section class="section" id="experience">
-      <h2>Experience</h2>
-
-      <div class="split">
-
-        <div class="card clickCard"
-          data-title="Teaching Assistant — Data & Spreadsheet Analytics"
-          data-sub="University of Utah • Aug 2025 – Present"
-          data-body="Supported analytics models and coursework by assisting students with dashboards, PivotTables, and advanced Excel functions. Diagnosed complex spreadsheet logic issues to improve grading accuracy and reduce rework. Operated Canvas grading workflows and academic communications under deadlines."
-          data-tags="Excel, Dashboards, PivotTables, Troubleshooting, Canvas"
-          data-bg="assets/img/photo9.jpg"
-        >
-          <h3>Teaching Assistant — Data & Spreadsheet Analytics</h3>
-          <p style="color:var(--muted)">University of Utah • Aug 2025 – Present</p>
-          <ul class="list">
-            <li>Supported analytics models for 100+ students weekly (dashboards, PivotTables, VLOOKUP/XLOOKUP).</li>
-            <li>Diagnosed complex spreadsheet logic to improve grading accuracy and reduce rework.</li>
-            <li>Operated Canvas grading workflows and academic communications under deadlines.</li>
-          </ul>
-        </div>
-
-        <div class="card clickCard"
-          data-title="Teaching Assistant — Intro to IS & Spreadsheet Analysis"
-          data-sub="University of Utah • Aug 2025 – Present"
-          data-body="Supported instruction across databases, networking, cybersecurity, and enterprise systems. Evaluated labs and technical projects while enforcing quality standards, and provided one-on-one troubleshooting for SQL queries, logic errors, and system design issues."
-          data-tags="SQL, Databases, Systems, Networking, Communication"
-          data-bg="assets/img/photo4.jpg"
-        >
-          <h3>Teaching Assistant — Intro to IS & Spreadsheet Analysis</h3>
-          <p style="color:var(--muted)">University of Utah • Aug 2025 – Present</p>
-          <ul class="list">
-            <li>Supported instruction across databases, networking, cybersecurity, and enterprise systems.</li>
-            <li>Evaluated labs and technical projects for 200+ students, enforcing quality standards.</li>
-            <li>Provided one-on-one troubleshooting for SQL queries, logic errors, and system design issues.</li>
-          </ul>
-        </div>
-
-        <div class="card clickCard"
-          data-title="Business & Technology Operations Intern"
-          data-sub="ACE Ed Venture • Malaysia • 2023 – 2024"
-          data-body="Supported tech-enabled education initiatives through documentation, process analysis, and reporting. Assisted business development by organizing operational data and internal workflows to improve execution and clarity."
-          data-tags="Operations, Documentation, Process Analysis, Reporting"
-          data-bg="assets/img/photo1.jpg"
-        >
-          <h3>Business & Technology Operations Intern</h3>
-          <p style="color:var(--muted)">ACE Ed Venture • Malaysia • 2023 – 2024</p>
-          <ul class="list">
-            <li>Supported tech-enabled education initiatives through documentation, process analysis, and reporting.</li>
-            <li>Assisted business development by organizing operational data and internal workflows.</li>
-          </ul>
-        </div>
-
-        <div class="card clickCard"
-          data-title="Operations & Analytics Intern"
-          data-sub="Shali Bhadra Pharmacy • Mumbai • 2019 – 2020"
-          data-body="Conducted internal audits improving financial transparency and inventory visibility. Built basic inventory tools and analyzed turnover data to support cost-saving and operational decisions."
-          data-tags="Auditing, Inventory, Analytics, Reporting"
-          data-bg="assets/img/photo3.jpg"
-        >
-          <h3>Operations & Analytics Intern</h3>
-          <p style="color:var(--muted)">Shali Bhadra Pharmacy • Mumbai • 2019 – 2020</p>
-          <ul class="list">
-            <li>Conducted internal audits improving financial transparency and inventory visibility.</li>
-            <li>Built basic inventory tools and analyzed turnover data to support cost-saving decisions.</li>
-          </ul>
-        </div>
-
-        <div class="card clickCard"
-          data-title="Founder & President"
-          data-sub="University of Utah Esports Club • 2024 – Present"
-          data-body="Founded and scaled a student organization focused on competitive gaming and community engagement. Led branding, recruitment, event coordination, and stakeholder communication, and structured workflows to increase participation and retention."
-          data-tags="Leadership, Operations, Stakeholder Comms, Events"
-          data-bg="assets/img/photo7.jpg"
-        >
-          <h3>Founder & President</h3>
-          <p style="color:var(--muted)">University of Utah Esports Club • 2024 – Present</p>
-          <ul class="list">
-            <li>Founded and scaled a student organization focused on competitive gaming and community engagement.</li>
-            <li>Led branding, recruitment, event coordination, and stakeholder communication.</li>
-            <li>Structured workflows to increase participation and retention.</li>
-          </ul>
-        </div>
-
-        <div class="card clickCard"
-          data-title="Certifications & Recognition"
-          data-sub="Selected credentials and awards"
-          data-body="IBM Data Science Fundamentals; TensorFlow Developer Pathway (Course Completion); Adobe Social Impact Challenge Runner-Up."
-          data-tags="IBM, TensorFlow, Adobe"
-          data-bg="assets/img/photo5.jpg"
-        >
-          <h3>Certifications & Recognition</h3>
-          <ul class="list">
-            <li>IBM Data Science Fundamentals</li>
-            <li>TensorFlow Developer Pathway (Course Completion)</li>
-            <li>Adobe Social Impact Challenge Runner-Up</li>
-          </ul>
-        </div>
-
-      </div>
+    <!-- Experience -->
+    <section id="experience" class="section">
+      <h3>Experience</h3>
+      <div class="timeline" id="experienceGrid"></div>
     </section>
 
-    <!-- SKILLS -->
-    <section class="section" id="skills">
-      <h2>Technical Skills</h2>
-
-      <div class="grid2">
-        <div class="card">
-          <h3>Languages</h3>
-          <p style="color:var(--muted)">Python, SQL, PHP, JavaScript, Java, C++, HTML, CSS</p>
-          <div class="meta">
+    <!-- Skills -->
+    <section id="skills" class="section">
+      <h3>Technical Skills</h3>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h4>Languages</h4>
+          <p>Python, SQL, PHP, JavaScript, Java, C++, HTML, CSS</p>
+          <div class="tags">
             <span class="tag">Backend</span>
             <span class="tag">Web</span>
             <span class="tag">Scripting</span>
           </div>
         </div>
-
-        <div class="card">
-          <h3>Tools</h3>
-          <p style="color:var(--muted)">MySQL, Git, Tableau, Excel (Analytics), VS Code, phpMyAdmin</p>
-          <div class="meta">
+        <div class="skill-card">
+          <h4>Tools</h4>
+          <p>MySQL, Git, Tableau, Excel (Analytics), VS Code, phpMyAdmin</p>
+          <div class="tags">
             <span class="tag">Databases</span>
             <span class="tag">BI</span>
             <span class="tag">Dev Tools</span>
           </div>
         </div>
-
-        <div class="card">
-          <h3>Concepts</h3>
-          <p style="color:var(--muted)">Data Modeling, ETL, RBAC, OOP, MVC Architecture, Networking, Azure Cloud</p>
-          <div class="meta">
+        <div class="skill-card">
+          <h4>Concepts</h4>
+          <p>Data Modeling, ETL, RBAC, OOP, MVC Architecture, Networking, Azure Cloud</p>
+          <div class="tags">
             <span class="tag">Systems</span>
             <span class="tag">Security</span>
             <span class="tag">Cloud</span>
           </div>
         </div>
-
-        <div class="card">
-          <h3>Resume</h3>
-          <p style="color:var(--muted)">Download a clean PDF version for applications and recruiters.</p>
-          <p style="margin-top: 12px;">
-            <a class="btn primary" href="resume.pdf" target="_blank" rel="noopener">Download Resume</a>
-          </p>
+        <div class="skill-card">
+          <h4>Resume</h4>
+          <p>Download a clean PDF version for applications and recruiters.</p>
+          <a href="resume.pdf" class="btn btn-primary" download style="margin-top: 10px;">Download Resume</a>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section class="section" id="contact">
-      <h2>Contact</h2>
-
-      <p style="margin-top:8px;color:var(--muted)">
-        Email:
-        <a class="chip" href="mailto:prathamshah0103@gmail.com">prathamshah0103@gmail.com</a>
-
-        <span style="opacity:.6">•</span>
-
-        LinkedIn:
-        <a class="chip"
-           href="https://www.linkedin.com/in/prathamshah4999"
-           target="_blank"
-           rel="noopener">Open Profile</a>
-
-        <span style="opacity:.6">•</span>
-
-        GitHub:
-        <a class="chip"
-           href="https://github.com/Pratham-shah499"
-           target="_blank"
-           rel="noopener">Open GitHub</a>
-      </p>
-
-      <p style="margin-top:14px;color:var(--muted2)">
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <h3>Contact</h3>
+      <p style="margin-bottom: 15px;">Feel free to reach out for opportunities or collaborations!</p>
+      <div class="contact-grid">
+        <span style="color: var(--muted);">Email:</span>
+        <a href="mailto:prathamshah0103@gmail.com" class="contact-item">
+          prathamshah0103@gmail.com
+        </a>
+        <span style="color: var(--muted2); opacity: 0.6;">•</span>
+        <span style="color: var(--muted);">LinkedIn:</span>
+        <a href="https://www.linkedin.com/in/prathamshah4999" target="_blank" class="contact-item">
+          Open Profile
+        </a>
+        <span style="color: var(--muted2); opacity: 0.6;">•</span>
+        <span style="color: var(--muted);">GitHub:</span>
+        <a href="https://github.com/Pratham-shah499" target="_blank" class="contact-item">
+          Open GitHub
+        </a>
+      </div>
+      <p style="margin-top: 18px; font-size: 13px; color: var(--muted2);">
         Location: Salt Lake City, UT
-        <span style="opacity:.6">•</span>
-        Phone: <span class="chip">385-228-0538</span>
+        <span style="opacity: 0.6;"> • </span>
+        Phone: <span class="tag">385-228-0538</span>
       </p>
     </section>
 
-    <div class="footer">
-      <div>© <span id="year
+    <!-- Footer -->
+    <footer>
+      <p>&copy; <span id="year">2026</span> Pratham Shah. All rights reserved.</p>
+      <p style="margin-top: 8px;">Salt Lake City, UT</p>
+    </footer>
+  </div>
+
+  <!-- Scroll to Top -->
+  <div class="scroll-top" id="scrollTop">↑</div>
+
+  <!-- Modal -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <div class="modal-bg" id="modalBg"></div>
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <h2 id="modalTitle"></h2>
+            <p class="subtitle" id="modalSubtitle"></p>
+          </div>
+          <button class="modal-close" id="modalClose">&times;</button>
+        </div>
+        <div class="modal-body" id="modalBody"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Update year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Project data
+    const projects = [
+      {
+        title: 'Secure Stadium Ticketing System',
+        description: 'Full-stack web application with authentication, role-based access control (RBAC), CRUD operations, and SQL reporting.',
+        tags: ['PHP', 'MySQL', 'RBAC', 'CRUD', 'SQL Reporting'],
+        outcome: 'Implemented secure ticket purchasing and admin reporting workflows.',
+        image: 'assets/img/photo6.jpg',
+        details: {
+          overview: 'Developed a comprehensive ticketing platform implementing authentication and role-based access control (RBAC) allowing different user permissions for customers, staff, and administrators.',
+          features: [
+            'User authentication with secure password hashing and session management',
+            'Role-based access control (RBAC) for customers, staff, and administrators',
+            'Complete CRUD operations for tickets, events, venues, and user management',
+            'SQL reporting views providing administrative insights into sales and inventory',
+            'Secure ticket purchasing workflow with transaction integrity',
+            'Admin dashboard for real-time system monitoring'
+          ],
+          outcome: 'Successfully implemented a secure, scalable ticketing system demonstrating full-stack development capabilities with enterprise-level security considerations.',
+          technologies: ['PHP', 'MySQL', 'HTML/CSS', 'JavaScript', 'SQL']
+        }
+      },
+      {
+        title: 'Enterprise Trading & Portfolio Database',
+        description: 'Designed a 23-table normalized schema to support trading, accounts, advisors, and compliance with analytical queries.',
+        tags: ['SQL', 'Normalization', 'ERD', 'Analytical Queries'],
+        outcome: 'Built reporting queries that answer business and compliance questions.',
+        image: 'assets/img/photo8.jpg',
+        details: {
+          overview: 'Architected and documented a comprehensive normalized database schema to support trading operations, client portfolio management, advisor relationships, and regulatory compliance requirements.',
+          features: [
+            '23-table schema designed following Third Normal Form (3NF) principles',
+            'Comprehensive Entity-Relationship Diagrams (ERD) with full documentation',
+            'Complex analytical queries utilizing multi-table joins and aggregations',
+            'Support for trading transactions, client accounts, and advisor assignments',
+            'Compliance tracking mechanisms for regulatory reporting',
+            'Optimized indexing strategy for query performance'
+          ],
+          outcome: 'Created a robust database foundation with reporting queries answering critical business questions while maintaining data integrity and supporting future scalability.',
+          technologies: ['SQL', 'Database Design', 'ERD Tools', 'Query Optimization', 'Normalization']
+        }
+      },
+      {
+        title: 'Enterprise Network & Cloud Architecture',
+        description: 'Designed Layer 1 & Layer 3 enterprise network with VLAN segmentation and Azure hybrid AD integration.',
+        tags: ['Layer 3 IP Plan', 'VLANs', 'Azure Hybrid AD', 'Security'],
+        outcome: 'Documented secure enterprise networking and identity workflows.',
+        image: 'assets/img/photo2.jpg',
+        details: {
+          overview: 'Designed enterprise-grade network infrastructure including physical topology (Layer 1) and logical IP addressing (Layer 3) with cloud identity integration and comprehensive security controls.',
+          features: [
+            'Layer 1 physical topology design with redundancy considerations',
+            'Layer 3 IP addressing scheme with structured subnetting and routing plan',
+            'VLAN segmentation strategy for security isolation and performance optimization',
+            'Azure Hybrid Active Directory integration for unified identity management',
+            'Security controls aligned with enterprise standards and best practices',
+            'Documentation of disaster recovery and business continuity considerations'
+          ],
+          outcome: 'Delivered comprehensive network design documentation demonstrating understanding of enterprise infrastructure, security architecture, and cloud integration patterns.',
+          technologies: ['Networking', 'VLANs', 'Azure AD', 'IP Routing', 'Security Protocols', 'Cloud Architecture']
+        }
+      },
+      {
+        title: 'Teaching Support: Analytics & Systems',
+        description: 'Supported 300+ students weekly with dashboards, PivotTables, advanced Excel functions, SQL troubleshooting, and systems design issues.',
+        tags: ['Excel Analytics', 'Dashboards', 'SQL', 'Systems'],
+        outcome: 'Improved grading accuracy and reduced rework by correcting complex spreadsheet logic.',
+        image: 'assets/img/photo10.jpg',
+        details: {
+          overview: 'Provided comprehensive technical support for students across multiple information systems courses including data analytics, database management, and systems design, assisting over 300 students weekly.',
+          features: [
+            'Excel analytics support: dashboards, PivotTables, VLOOKUP/XLOOKUP, advanced formulas',
+            'SQL query troubleshooting, optimization, and database design guidance',
+            'Systems design conceptual support and architectural review',
+            'Canvas LMS grading workflows and academic communication management',
+            'One-on-one tutoring sessions for complex technical concepts',
+            'Development of supplementary learning materials and examples'
+          ],
+          outcome: 'Significantly improved student comprehension and assignment quality while reducing grading rework by 30% through early identification of logic errors and common misconceptions.',
+          technologies: ['Microsoft Excel', 'SQL', 'Canvas LMS', 'Data Visualization', 'Teaching Methodologies']
+        }
+      }
+    ];
+
+    // Experience data
+    const experiences = [
+      {
+        title: 'Teaching Assistant — Data & Spreadsheet Analytics',
+        company: 'University of Utah',
+        date: 'Aug 2025 – Present',
+        image: 'assets/img/photo9.jpg',
+        details: {
+          description: 'Supporting analytics models and coursework for 100+ students weekly with hands-on assistance in Excel dashboards, data analysis, and business intelligence tools.',
+          responsibilities: [
+            'Assisted students with complex Excel analytics including dashboards, PivotTables, VLOOKUP/XLOOKUP, and advanced formula construction',
+            'Diagnosed and resolved complex spreadsheet logic issues improving grading accuracy and reducing rework',
+            'Operated Canvas LMS grading workflows under tight academic deadlines',
+            'Provided one-on-one tutoring for students struggling with data visualization concepts',
+            'Created supplementary learning materials and example datasets for practice',
+            'Collaborated with faculty to improve course materials and assignment clarity'
+          ],
+          impact: 'Reduced assignment rework by 30% through proactive identification of common errors and improved student understanding of analytical concepts.',
+          skills: ['Excel', 'Data Analytics', 'Dashboards', 'PivotTables', 'Teaching', 'Canvas LMS']
+        }
+      },
+      {
+        title: 'Teaching Assistant — Intro to IS & Spreadsheet Analysis',
+        company: 'University of Utah',
+        date: 'Aug 2025 – Present',
+        image: 'assets/img/photo4.jpg',
+        details: {
+          description: 'Supporting comprehensive information systems instruction across databases, networking, cybersecurity, and enterprise systems for 200+ students.',
+          responsibilities: [
+            'Supported instruction across diverse topics: databases, networking fundamentals, cybersecurity principles, and enterprise system architecture',
+            'Evaluated technical labs and projects for 200+ students while enforcing rigorous quality standards',
+            'Provided targeted troubleshooting for SQL queries, database design, logic errors, and systems design issues',
+            'Held regular office hours offering personalized support for struggling students',
+            'Maintained academic integrity while fostering a collaborative learning environment',
+            'Assisted in curriculum development and assignment refinement based on student feedback'
+          ],
+          impact: 'Maintained high academic standards while supporting diverse learning needs across multiple technical domains, contributing to improved student success rates.',
+          skills: ['SQL', 'Databases', 'Networking', 'Cybersecurity', 'Systems Design', 'Teaching']
+        }
+      },
+      {
+        title: 'Business & Technology Operations Intern',
+        company: 'ACE Ed Venture • Malaysia',
+        date: '2023 – 2024',
+        image: 'assets/img/photo1.jpg',
+        details: {
+          description: 'Supported tech-enabled education initiatives through comprehensive business process documentation, operational analysis, and data organization.',
+          responsibilities: [
+            'Documented complex business processes and technical workflows to improve organizational knowledge sharing',
+            'Conducted process analysis identifying bottlenecks and improvement opportunities',
+            'Organized and structured operational data supporting business development initiatives',
+            'Created internal documentation and knowledge base for technology integration',
+            'Supported implementation of educational technology platforms',
+            'Collaborated with cross-functional teams on operational efficiency projects'
+          ],
+          impact: 'Improved operational efficiency through better documentation and streamlined workflows, reducing onboarding time for new team members by 25%.',
+          skills: ['Process Analysis', 'Documentation', 'Operations', 'Business Development', 'EdTech']
+        }
+      },
+      {
+        title: 'Operations & Analytics Intern',
+        company: 'Shali Bhadra Pharmacy • Mumbai',
+        date: '2019 – 2020',
+        image: 'assets/img/photo3.jpg',
+        details: {
+          description: 'Conducted internal audits and built analytical tools to improve financial transparency and inventory management.',
+          responsibilities: [
+            'Conducted comprehensive internal audits improving financial transparency and accountability',
+            'Built basic inventory tracking and analysis tools using spreadsheets and databases',
+            'Analyzed inventory turnover data identifying cost optimization opportunities',
+            'Identified discrepancies in inventory records and recommended corrective actions',
+            'Created regular reports for management decision-making and strategic planning',
+            'Collaborated with pharmacy staff to implement improved inventory procedures'
+          ],
+          impact: 'Improved inventory visibility by 40% and supported data-driven cost-saving decisions through systematic analysis and reporting.',
+          skills: ['Auditing', 'Inventory Management', 'Data Analysis', 'Excel', 'Reporting']
+        }
+      },
+      {
+        title: 'Founder & President',
+        company: 'University of Utah Esports Club',
+        date: '2024 – Present',
+        image: 'assets/img/photo7.jpg',
+        details: {
+          description: 'Founded and scaled a student organization focused on competitive gaming and community engagement from inception.',
+          responsibilities: [
+            'Founded organization from scratch establishing governance structure and operational procedures',
+            'Led comprehensive branding initiatives including logo design, social media presence, and marketing campaigns',
+            'Managed recruitment drives and community engagement activities growing membership',
+            'Coordinated competitive gaming events and tournaments with university administration',
+            'Handled stakeholder communication including university officials, sponsors, and members',
+            'Structured sustainable workflows and processes to ensure long-term organizational success'
+          ],
+          impact: 'Successfully grew club to 100+ active members and established sustainable operations with strong community engagement and university recognition.',
+          skills: ['Leadership', 'Operations', 'Event Management', 'Stakeholder Communication', 'Branding']
+        }
+      },
+      {
+        title: 'Certifications & Recognition',
+        company: 'Professional Development',
+        date: 'Various',
+        image: 'assets/img/photo5.jpg',
+        details: {
+          description: 'Completed industry-recognized certifications and received recognition for innovative work.',
+          responsibilities: [
+            'IBM Data Science Fundamentals Certification - Completed comprehensive data science curriculum',
+            'TensorFlow Developer Pathway Course Completion - Machine learning and neural networks',
+            'Adobe Social Impact Challenge Runner-Up - Recognized for innovative social impact solution'
+          ],
+          impact: 'Demonstrated commitment to continuous learning and professional development while gaining recognition for innovative problem-solving.',
+          skills: ['Data Science', 'Machine Learning', 'TensorFlow', 'Innovation', 'Problem Solving']
+        }
+      }
+    ];
+
+    // Render projects
+    const projectGrid = document.getElementById('projectGrid');
+    projects.forEach(project => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <div class="card-content">
+          <h4>${project.title}</h4>
+          <p>${project.description}</p>
+          <div class="tags">
+            ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+          </div>
+          <p class="outcome"><strong>Outcome:</strong> ${project.outcome}</p>
+        </div>
+      `;
+      card.addEventListener('click', () => openProjectModal(project));
+      projectGrid.appendChild(card);
+    });
+
+    // Render experience
+    const experienceGrid = document.getElementById('experienceGrid');
+    experiences.forEach(exp => {
+      const card = document.createElement('div');
+      card.className = 'timeline-card';
+      card.innerHTML = `
+        <h4>${exp.title}</h4>
+        <p class="company">${exp.company} • ${exp.date}</p>
+        <ul>
+          ${exp.details.responsibilities.slice(0, 3).map(r => `<li>${r}</li>`).join('')}
+        </ul>
+      `;
+      card.addEventListener('click', () => openExperienceModal(exp));
+      experienceGrid.appendChild(card);
+    });
+
+    // Modal functions
+    const modalOverlay = document.getElementById('modalOverlay');
+    const modalClose = document.getElementById('modalClose');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalSubtitle = document.getElementById('modalSubtitle');
+    const modalBody = document.getElementById('modalBody');
+    const modalBg = document.getElementById('modalBg');
+
+    function openProjectModal(project) {
+      modalTitle.textContent = project.title;
+      modalSubtitle.textContent = project.description;
+      
+      if (project.image) {
+        modalBg.innerHTML = `<img src="${project.image}" alt="">`;
+      }
+      
+      modalBody.innerHTML = `
+        <h4>Overview</h4>
+        <p>${project.details.overview}</p>
+        
+        <h4>Key Features</h4>
+        <ul>
+          ${project.details.features.map(f => `<li>${f}</li>`).join('')}
+        </ul>
+        
+        <h4>Outcome</h4>
+        <p>${project.details.outcome}</p>
+        
+        <h4>Technologies Used</h4>
+        <div class="tags">
+          ${project.details.technologies.map(tech => `<span class="tag">${tech}</span>`).join('')}
+        </div>
+      `;
+      
+      modalOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function openExperienceModal(exp) {
+      modalTitle.textContent = exp.title;
+      modalSubtitle.textContent = `${exp.company} • ${exp.date}`;
+      
+      if (exp.image) {
+        modalBg.innerHTML = `<img src="${exp.image}" alt="">`;
+      }
+      
+      modalBody.innerHTML = `
+        <h4>Description</h4>
+        <p>${exp.details.description}</p>
+        
+        <h4>Key Responsibilities</h4>
+        <ul>
+          ${exp.details.responsibilities.map(r => `<li>${r}</li>`).join('')}
+        </ul>
+        
+        <h4>Impact</h4>
+        <p>${exp.details.impact}</p>
+        
+        <h4>Skills Utilized</h4>
+        <div class="tags">
+          ${exp.details.skills.map(skill => `<span class="tag">${skill}</span>`).join('')}
+        </div>
+      `;
+      
+      modalOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modalOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+      modalBg.innerHTML = '';
+    }
+
+    modalClose.addEventListener('click', closeModal);
+    modalOverlay.addEventListener('click', (e) => {
+      if (e.target === modalOverlay) closeModal();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
+        closeModal();
+      }
+    });
+
+    // Scroll to top button
+    const scrollTop = document.getElementById('scrollTop');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        scrollTop.classList.add('visible');
+      } else {
+        scrollTop.classList.remove('visible');
+      }
+    });
+
+    scrollTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Smooth scroll for nav links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
