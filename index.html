@@ -471,16 +471,6 @@
       color: rgba(255,255,255,0.75);
     }
 
-    /* interactive skill tags */
-    .skill-tag {
-      cursor: pointer;
-    }
-
-    .skill-tag:hover {
-      border-color: rgba(167,216,240,0.5);
-      background: rgba(167,216,240,0.12);
-    }
-
     .card .outcome {
       margin-top: 14px;
       font-size: 13px;
@@ -572,6 +562,15 @@
       font-size: 13px;
       color: var(--muted);
       margin-bottom: 12px;
+    }
+
+    .tags .skill-tag {
+      cursor: pointer;
+    }
+
+    .tags .skill-tag:hover {
+      border-color: rgba(167,216,240,0.5);
+      background: rgba(167,216,240,0.12);
     }
 
     /* Contact Section */
@@ -838,7 +837,7 @@
     <!-- Hero -->
     <section class="hero">
       <div class="hero-bg">
-        <img src="assets/img/photo9.jpg" alt="Teaching analytics session">
+        <img src="assets/img/photo9.jpg" alt="Teaching session">
       </div>
       <div class="hero-content">
         <div class="hero-main">
@@ -868,7 +867,7 @@
           <div class="hero-card-inner">
             <div class="profile-row">
               <div class="profile-img">
-                <img src="assets/img/photo4.jpg" alt="Pratham Shah headshot">
+                <img src="assets/img/photo4.jpg" alt="Pratham Shah">
               </div>
               <div class="profile-info">
                 <div class="label">Highlights</div>
@@ -915,13 +914,13 @@
       </p>
       <div class="photo-grid">
         <div class="photo-item">
-          <img src="assets/img/photo9.jpg" alt="Classroom analytics session">
+          <img src="assets/img/photo9.jpg" alt="Classroom session">
         </div>
         <div class="photo-item">
-          <img src="assets/img/photo10.jpg" alt="Team collaboration on systems project">
+          <img src="assets/img/photo10.jpg" alt="Collaboration">
         </div>
         <div class="photo-item">
-          <img src="assets/img/photo1.jpg" alt="Teaching support for information systems course">
+          <img src="assets/img/photo1.jpg" alt="Teaching">
         </div>
       </div>
     </section>
@@ -944,7 +943,7 @@
       <div class="skills-grid">
         <div class="skill-card">
           <h4>Languages</h4>
-          <p>Click a skill to see a quick definition and open its reference.</p>
+          <p>Python, SQL, PHP, JavaScript, Java, C++, HTML, CSS</p>
           <div class="tags">
             <span class="tag skill-tag" data-skill="Python" data-wiki="Python_(programming_language)">Python</span>
             <span class="tag skill-tag" data-skill="SQL" data-wiki="SQL">SQL</span>
@@ -958,7 +957,7 @@
         </div>
         <div class="skill-card">
           <h4>Tools</h4>
-          <p>Technologies used across analytics, BI, and development workflows.</p>
+          <p>MySQL, Git, Tableau, Excel (Analytics), VS Code, phpMyAdmin</p>
           <div class="tags">
             <span class="tag skill-tag" data-skill="MySQL" data-wiki="MySQL">MySQL</span>
             <span class="tag skill-tag" data-skill="Git" data-wiki="Git">Git</span>
@@ -970,7 +969,7 @@
         </div>
         <div class="skill-card">
           <h4>Concepts</h4>
-          <p>Core information systems and architecture concepts.</p>
+          <p>Data Modeling, ETL, RBAC, OOP, MVC Architecture, Networking, Azure Cloud</p>
           <div class="tags">
             <span class="tag skill-tag" data-skill="Data Modeling" data-wiki="Data_modeling">Data Modeling</span>
             <span class="tag skill-tag" data-skill="ETL" data-wiki="Extract,_transform,_load">ETL</span>
@@ -1080,7 +1079,7 @@
       if (e.key === 'Escape') closeModal();
     });
 
-    // Project data
+    // Project data (existing + 2 new video projects)
     const projects = [
       {
         title: 'Secure Stadium Ticketing System',
@@ -1161,10 +1160,72 @@
           outcome: 'Significantly improved student comprehension and assignment quality while reducing grading rework by 30% through early identification of logic errors and common misconceptions.',
           technologies: ['Microsoft Excel', 'SQL', 'Canvas LMS', 'Data Visualization', 'Teaching Methodologies']
         }
+      },
+      // NEW: Barcelona project video
+      {
+        title: 'Barcelona Systems & Planning Project',
+        description: 'City-focused project for Barcelona demonstrating planning, systems thinking, and presentation skills.',
+        tags: ['Presentation', 'Systems Thinking', 'Research'],
+        outcome: 'Produced a concise video explaining the project and key insights.',
+        image: 'assets/img/photo8.jpg',
+        details: {
+          overview: `
+            <div style="margin: 12px 0; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.12); box-shadow: 0 12px 30px rgba(0,0,0,0.35);">
+              <iframe
+                width="100%"
+                height="315"
+                src="https://www.youtube.com/embed/Q165vto5S2Y"
+                title="Barcelona Project – Pratham Shah"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <p>This video presents a Barcelona-focused project, highlighting how I structure a narrative, synthesize research, and explain systems decisions clearly.</p>
+          `,
+          features: [
+            'Structured a clear narrative around the Barcelona project brief and context.',
+            'Summarized key insights visually and verbally in a short video.',
+            'Demonstrated systems thinking and the ability to communicate decisions to non-technical audiences.'
+          ],
+          outcome: 'Shows how I present complex city and systems topics in a concise, recruiter-friendly format.',
+          technologies: ['Presentation', 'Systems Thinking', 'Visual Communication']
+        }
+      },
+      // NEW: Information Systems industry pitch video
+      {
+        title: 'Information Systems Industry Pitch',
+        description: 'Short industry pitch video explaining the value of Information Systems and my fit in the field.',
+        tags: ['IS Pitch', 'Communication', 'Career Story'],
+        outcome: 'Clarified how my skills connect to industry needs in a recruiter-friendly format.',
+        image: 'assets/img/photo6.jpg',
+        details: {
+          overview: `
+            <div style="margin: 12px 0; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.12); box-shadow: 0 12px 30px rgba(0,0,0,0.35);">
+              <iframe
+                width="100%"
+                height="315"
+                src="https://www.youtube.com/embed/lEIFQ3Bfk3w"
+                title="Information Systems Industry Pitch – Pratham Shah"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <p>This pitch introduces Information Systems in plain language and explains how my projects and TA experience map to industry roles.</p>
+          `,
+          features: [
+            'Explains what Information Systems is and why it matters to organizations.',
+            'Connects coursework, projects, and TA work to real job functions.',
+            'Designed as a quick watch for recruiters to understand my story and communication style.'
+          ],
+          outcome: 'Provides a direct, high-level view of my profile and how I think about IS careers.',
+          technologies: ['Public Speaking', 'Storytelling', 'Information Systems']
+        }
       }
     ];
 
-    // Experience data
+    // Experience data (unchanged)
     const experiences = [
       {
         title: 'Teaching Assistant — Data & Spreadsheet Analytics',
@@ -1279,7 +1340,7 @@
       }
     ];
 
-    // Render projects
+    // Render projects (supports HTML overview)
     const projectGrid = document.getElementById('projectGrid');
     projects.forEach(project => {
       const card = document.createElement('div');
@@ -1299,7 +1360,7 @@
         modalTitle.textContent = project.title;
         modalSubtitle.textContent = 'Project details, features, and impact';
         modalBody.innerHTML = `
-          <p>${project.details.overview}</p>
+          ${project.details.overview}
           <h4>Key Features</h4>
           <ul>
             ${project.details.features.map(f => `<li>${f}</li>`).join('')}
@@ -1344,7 +1405,7 @@
       experienceGrid.appendChild(card);
     });
 
-    // Skill definitions for modal
+    // Skill definitions
     const skillDefinitions = {
       'Python': 'Python is a high-level, general-purpose programming language widely used for data analysis, automation, and web development.',
       'SQL': 'SQL (Structured Query Language) is used to manage and query data stored in relational database management systems.',
@@ -1377,7 +1438,7 @@
         const wikiSlug = tag.dataset.wiki;
         const definition = skillDefinitions[name] || 'View more details on Wikipedia.';
 
-        modalBg.innerHTML = ''; // neutral background for skills
+        modalBg.innerHTML = '';
         modalTitle.textContent = name;
         modalSubtitle.textContent = 'Quick definition and reference';
         modalBody.innerHTML = `
